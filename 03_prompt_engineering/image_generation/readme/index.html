@@ -1,0 +1,2967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/03_prompt_engineering/image_generation/readme/">
+      
+      
+        <link rel="prev" href="../../six_part_prompting_framework/">
+      
+      
+        <link rel="next" href="../../prompt_driven_development/readme/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Prompt Engineering Tutorial for Nano Banana - Learn Agentic AI from Low Code to Code - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prompt-engineering-tutorial-for-nano-banana" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-header__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Agentic AI from Low Code to Code - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt Engineering Tutorial for Nano Banana
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-nav__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Agentic AI from Low Code to Code - Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learn Agentic AI: From Low-Code to Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00 agentic web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            00 agentic web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/implications_for_stakeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3: Implications for Stakeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/panaversity-openai-vision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Vision for an AI-Driven Future Learning Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Blueprint to Power the Future Web with AI - Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 agentic org
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            01 agentic org
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/agentic_org_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Learning Guide to the Future of Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/graduate_level_quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Graduate Level Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCQ Quiz: The Agentic Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Rise of Agentic Organizations: How AI Is Redefining the Future of Work and Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 ai and human readiness
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            02 ai and human readiness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/ai_transformation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating AI Transformation: A Strategic Guide for Beginners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI and Human Readiness in IT: Graduate-Level Assessment Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating the Crossroads of AI and Human Readiness in IT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 prompt engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            03 prompt engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_engineering_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Guide to Context Engineering for AI Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../six_part_prompting_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Image generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Image generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Tutorial for Nano Banana
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Tutorial for Nano Banana
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-specificity-over-generality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Specificity Over Generality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-visual-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Visual Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-professional-photography-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Professional Photography Language
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-effective-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of Effective Prompts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-professional-branding-portrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 1: Professional Branding Portrait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-cinematic-black-white-portrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 2: Cinematic Black &amp; White Portrait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-corporate-headshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 3: Corporate Headshot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-futuristic-branding-poster" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 4: Futuristic Branding Poster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-5-magazine-editorial-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 5: Magazine Editorial Style
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-6-abstract-creative-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 6: Abstract Creative Variant
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prompt driven development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Prompt driven development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_driven_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Driven Development (PDD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ui development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ui development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI Development by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ux design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ux design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ux_design/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UX Design by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ux_design/uxpilot_workflow_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Video generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Video generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Video Generation Tutorial for Google Veo 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04 no code agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            04 no code agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/applied_self_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applied Self-Learning Guide — What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/class_handson_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Project: Assignments Grading and Feedback Agentic System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/pre-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Setup Guide: Getting Ready for Week 2 Session 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/what_is_an_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents VS Chatbots - Student's Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05 knowledge connections
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            05 knowledge connections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/01_file_search_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 1: File Search with Vector Stores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/02_connectors_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 2: Connectors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/03_mcp_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 3: MCP Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/04_mcp_nodes_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4: MCP Nodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 5: Connecting Knowledge Safely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06 visual patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            06 visual patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06_visual_patterns/lab_agentic_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab: Customer Support System Using All 4 Agentic Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06_visual_patterns/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 6: Visual and Agentic Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    07 deploy chatkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            07 deploy chatkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07_deploy_chatkit/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 7: Deploy with ChatKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Assignments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/01_agentic_ai_usecase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment: Find One Real Agentic AI Use Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teacher guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teacher guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_feedback_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    💬 Standard Feedback Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_grading_criteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧮 Grading Rubric — “Find One Real Agentic AI Use Case”
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_sample_eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧾 Example Teacher Evaluation (Sample)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-specificity-over-generality" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Specificity Over Generality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-visual-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Visual Hierarchy
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-professional-photography-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Professional Photography Language
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-effective-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of Effective Prompts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-professional-branding-portrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 1: Professional Branding Portrait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-cinematic-black-white-portrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 2: Cinematic Black &amp; White Portrait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-corporate-headshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 3: Corporate Headshot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-futuristic-branding-poster" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 4: Futuristic Branding Poster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-5-magazine-editorial-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 5: Magazine Editorial Style
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-6-abstract-creative-variant" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔹 Example 6: Abstract Creative Variant
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="prompt-engineering-tutorial-for-nano-banana">Prompt Engineering Tutorial for Nano Banana</h1>
+<p><em>By Example — with Real Prompts and Outputs</em></p>
+<p>Prompt at https://gemini.google.com/</p>
+<p>Google Nano Banana (like MidJourney, DALL·E, or Stable Diffusion) responds to highly descriptive prompts. The more structured, visual, and contextual your input, the closer the output matches your intent.</p>
+<p><a href="https://neolifehospital.in/10-best-google-gemini-ai-photo-editing-prompts-for-men/">10 Best Google Gemini Ai Photo Editing Prompts For Men To Create 4k Hd Portraits</a></p>
+<p><a href="https://www.freejobalert.com/article/new-trending-gemini-ai-photo-editing-prompts-for-girls-19256">Top 30 New Trending Gemini AI Photo Editing Prompts for Girl's: Viral Selfie Ideas 2025</a></p>
+<hr />
+<h2 id="core-principles">Core Principles</h2>
+<h3 id="1-specificity-over-generality">1. <strong>Specificity Over Generality</strong></h3>
+<ul>
+<li>Vague: "a nice portrait"</li>
+<li>Better: "hyper-realistic studio portrait with professional lighting"</li>
+</ul>
+<h3 id="2-visual-hierarchy">2. <strong>Visual Hierarchy</strong></h3>
+<ul>
+<li>Start with the main subject</li>
+<li>Add environment/background</li>
+<li>Specify lighting and mood</li>
+<li>Include technical details</li>
+</ul>
+<h3 id="3-professional-photography-language">3. <strong>Professional Photography Language</strong></h3>
+<ul>
+<li>Use camera terminology (85mm lens, f/1.4, shallow depth of field)</li>
+<li>Reference lighting setups (Rembrandt lighting, studio lighting)</li>
+<li>Mention photography styles (editorial, cinematic, fine art)</li>
+</ul>
+<h2 id="anatomy-of-effective-prompts">Anatomy of Effective Prompts</h2>
+<p>A well-structured prompt typically includes:
+1. <strong>Subject Description</strong> (who/what)
+2. <strong>Pose/Action</strong> (body language, positioning)
+3. <strong>Environment</strong> (background, setting)
+4. <strong>Lighting</strong> (type, direction, mood)
+5. <strong>Style</strong> (aesthetic, genre)
+6. <strong>Technical Specifications</strong> (camera settings, composition)
+7. <strong>Mood/Atmosphere</strong> (emotional tone)</p>
+<hr />
+<h2 id="example-1-professional-branding-portrait">🔹 Example 1: Professional Branding Portrait</h2>
+<p><strong>Prompt Used:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Hyper-realistic full-body portrait of the uploaded photo, standing casually against a smooth light-gray wall. The outfit is as worn as in winter. The hands are inside the pockets, the left hand wears a square smartwatch, one leg casually crossed over the other, relaxed and confident posture. The lighting is a professional studio, bright yet soft, premium clarity.
+
+On the wall beside him is a bold black-and-white stylized vector portrait of the same subject, rendered with modern geometric accents. Beneath the graphic, add clean bold text 'Zia Khan' in large type, and below it is a smaller font 'Agentic AI Developer'
+
+Mood & Style: modern, minimalistic, premium personal-branding aesthetic, sharp contrast, sleek composition.
+
+</div>
+
+<p>Original Image:</p>
+<p><img alt="" src="../original.jpeg" /></p>
+<p>Generated:</p>
+<p><img alt="" src="../g1.png" /></p>
+<p>✅ <strong>What Worked Here</strong></p>
+<ul>
+<li><strong>Subject grounding</strong>: “of the uploaded photo” ensures consistency.</li>
+<li><strong>Pose instructions</strong>: “hands inside the pockets, leg casually crossed” avoids random posture.</li>
+<li><strong>Context &amp; setting</strong>: “smooth light-gray wall, professional studio lighting” makes it brand-safe.</li>
+<li><strong>Extra elements</strong>: vector portrait + typography = personal brand identity.</li>
+</ul>
+<p>💡 <strong>Takeaway Rule:</strong> <em>For branding prompts, combine subject grounding + posture + context + design elements (like logos or text).</em></p>
+<hr />
+<h2 id="example-2-cinematic-black-white-portrait">🔹 Example 2: Cinematic Black &amp; White Portrait</h2>
+<p><strong>Prompt Used:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+{
+  "prompt": "create moody black and white portrait of a man, hand resting near mouth, deep gaze into distance, dramatic shadows across his face, expressive wrinkles, soft rembrandt  light from the side, cinematic atmosphere, professional portrait photography style, shot on 85mm lens f/1.4, shallow depth of field, high contrast, fine art photography, editorial feel",
+  "style": "cinematic, moody, introspective",
+  "lighting": "soft side lighting, high contrast shadows, natural light imitation",
+  "camera": {
+    "Model": "Leica SL2-S",
+    "lens": "85mm",
+    "aperture": "f/1.4",
+    "depth_of_field": "shallow",
+    "angle": "close-up portrait, slightly off-center framing"
+  },
+  "mood": "thoughtful, reflective, timeless"
+}
+</div>
+
+<p>or </p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+create moody black and white portrait of a man, hand resting near mouth, deep gaze into distance, dramatic shadows across his face, expressive wrinkles, soft rembrandt light from the side, cinematic atmosphere, professional portrait photography style, shot on 85mm lens f/1.4, shallow depth of field, high contrast, fine art photography, editorial feel
+</div>
+
+<p><strong>Style Metadata:</strong></p>
+<ul>
+<li>Style: cinematic, moody, introspective</li>
+<li>Lighting: soft side lighting, high contrast shadows</li>
+<li>Camera: Leica SL2-S, 85mm f/1.4, shallow DoF</li>
+<li>Mood: thoughtful, reflective, timeless</li>
+</ul>
+<p>Generated:</p>
+<p><img alt="" src="../g2.jpeg" /></p>
+<p><img alt="" src="../g2b.png" /></p>
+<p>✅ <strong>What Worked Here</strong></p>
+<ul>
+<li><strong>Mood anchoring</strong>: “moody, cinematic, introspective” frames the emotional tone.</li>
+<li><strong>Photography realism</strong>: camera &amp; lens details simulate professional photography.</li>
+<li><strong>Lighting control</strong>: “Rembrandt light” + “high contrast” = timeless look.</li>
+</ul>
+<p>💡 <strong>Takeaway Rule:</strong> <em>For artistic portraits, describe mood, lighting style, and camera lens to mimic photography realism.</em></p>
+<hr />
+<h2 id="example-3-corporate-headshot">🔹 Example 3: Corporate Headshot</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Professional corporate headshot of a confident middle-aged man, wearing a tailored dark suit and white shirt, subtle smile, neutral blurred background, evenly lit with soft studio lights, sharp focus on the face, natural skin tones, minimal retouching, LinkedIn profile photo style.
+</div>
+
+<p>Generated:</p>
+<p><img alt="" src="../g3.png" /></p>
+<p>✅ <strong>Why This Works:</strong>
+It creates a clean, realistic image suitable for resumes, LinkedIn, or official documents.</p>
+<hr />
+<h2 id="example-4-futuristic-branding-poster">🔹 Example 4: Futuristic Branding Poster</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Full-body futuristic portrait of the uploaded subject, standing in a sleek cyberpunk office with neon blue and purple accents. Outfit transformed into a smart-tech suit with glowing circuits along the fabric. Holographic display beside him showing the words: 'Agentic AI Developer'. Style: cinematic, glossy, high-tech corporate branding aesthetic.
+</div>
+
+<p>💡 <strong>Use Case:</strong> Great for AI events, keynotes, or futuristic branding material.</p>
+<p>Generated:</p>
+<p><img alt="" src="../g4.png" /></p>
+<hr />
+<h2 id="example-5-magazine-editorial-style">🔹 Example 5: Magazine Editorial Style</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Editorial fashion portrait of a man sitting on a modern chair, dressed in a sharp black suit with no tie, intense gaze into the camera. Lighting dramatic with deep shadows and highlights, glossy magazine style, Vogue photography, minimal background with gradient tones, cinematic 50mm lens effect.
+</div>
+
+<p>💡 <strong>Use Case:</strong> Stylish professional portfolios or publications.</p>
+<p>Generated:</p>
+<p><img alt="" src="../g5.png" /></p>
+<hr />
+<h2 id="example-6-abstract-creative-variant">🔹 Example 6: Abstract Creative Variant</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Digital abstract vector art of the uploaded subject, face geometrically stylized with sharp angular lines, vibrant neon gradient colors, glowing outlines, futuristic tech-hero aesthetic, suitable for modern branding and event posters.
+</div>
+
+<p>💡 <strong>Use Case:</strong> Event banners, creative keynote posters, or website hero images.</p>
+<p>Generated:</p>
+<p><img alt="" src="../g6.png" /></p>
+<hr />
+<h1 id="best-practices-for-prompt-engineering-in-nano-banana">📝 Best Practices for Prompt Engineering in Nano Banana</h1>
+<ol>
+<li>
+<p><strong>Anchor the Subject</strong></p>
+</li>
+<li>
+<p>Always mention: <em>“of the uploaded photo”</em> to retain likeness.</p>
+</li>
+<li>
+<p><strong>Control the Scene</strong></p>
+</li>
+<li>
+<p>Use <strong>environment cues</strong>: background, wall, lighting, props.</p>
+</li>
+<li>
+<p><strong>Specify Style &amp; Mood</strong></p>
+</li>
+<li>
+<p>Example moods: cinematic, corporate, fine art, futuristic.</p>
+</li>
+<li>
+<p><strong>Borrow from Photography</strong></p>
+</li>
+<li>
+<p>Camera/lens terms like <em>85mm f/1.4</em> create realism.</p>
+</li>
+<li>
+<p>Lighting terms like <em>Rembrandt, softbox, backlight</em> help shape mood.</p>
+</li>
+<li>
+<p><strong>Add Branding Elements</strong></p>
+</li>
+<li>
+<p>Vector logos, text overlays, geometric accents.</p>
+</li>
+<li>
+<p><strong>Iterate in Layers</strong></p>
+</li>
+<li>
+<p>Start broad (<em>“corporate portrait”</em>), then refine with poses, props, typography.</p>
+</li>
+</ol>
+<hr />
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<h3 id="1-layered-lighting-descriptions">1. Layered Lighting Descriptions</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Primary: soft key light from camera left
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Secondary: subtle fill light to reduce shadows
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Accent: rim light from behind for separation
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Ambient: warm studio ambiance, controlled spill
+</span></code></pre></div>
+<h3 id="2-composition-rules">2. Composition Rules</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Rule of thirds placement, subject positioned at left intersection
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Leading lines from architectural elements
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Negative space on right side for text overlay
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Shallow depth of field with bokeh background blur
+</span></code></pre></div>
+<h3 id="3-color-psychology-integration">3. Color Psychology Integration</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Warm golden hour tones for approachability
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Cool blue shadows for professionalism
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>High contrast black and white for timeless elegance
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>Muted earth tones for organic, natural feel
+</span></code></pre></div>
+<h2 id="style-categories">Style Categories</h2>
+<h3 id="corporateprofessional">Corporate/Professional</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Executive portrait: sharp business attire, confident posture, neutral background, even lighting, shot with 85mm lens, shallow depth of field, professional headshot style, clean composition, corporate environment
+</div>
+
+<h3 id="creativeartistic">Creative/Artistic</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Artist portrait: creative workspace background, natural lighting from large window, relaxed casual attire, hands engaged with creative tools, environmental storytelling, documentary photography style, 35mm lens, authentic candid moment
+</div>
+
+<h3 id="fashioneditorial">Fashion/Editorial</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+High-fashion portrait: dramatic pose, designer clothing, studio backdrop with gradient lighting, professional hair and makeup, editorial magazine style, shot with medium format camera, sharp details, fashion photography aesthetic
+</div>
+
+<h3 id="lifestylepersonal-branding">Lifestyle/Personal Branding</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Lifestyle portrait: modern home office setting, natural window light, smart casual attire, confident yet approachable expression, environmental context showing personality, lifestyle photography style, authentic moment capture
+</div>
+
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="too-vague">❌ Too Vague</h3>
+<p><strong>Bad:</strong> "nice portrait of a person"
+<strong>Good:</strong> "professional headshot with studio lighting and neutral background"</p>
+<h3 id="conflicting-styles">❌ Conflicting Styles</h3>
+<p><strong>Bad:</strong> "vintage film aesthetic with modern digital clarity"
+<strong>Good:</strong> "vintage-inspired styling with modern professional photography techniques"</p>
+<h3 id="overcomplicating">❌ Overcomplicating</h3>
+<p><strong>Bad:</strong> "surreal artistic avant-garde experimental abstract conceptual portrait"
+<strong>Good:</strong> "creative portrait with artistic lighting and thoughtful composition"</p>
+<h3 id="missing-key-elements">❌ Missing Key Elements</h3>
+<p><strong>Bad:</strong> "person standing"
+<strong>Good:</strong> "confident business professional standing against clean white background, professional studio lighting, corporate headshot style"</p>
+<h2 id="best-practices">Best Practices</h2>
+<h3 id="1-use-reference-photography-terms">1. Use Reference Photography Terms</h3>
+<ul>
+<li><strong>Studio lighting:</strong> key light, fill light, rim light, background light</li>
+<li><strong>Natural lighting:</strong> golden hour, blue hour, window light, overcast</li>
+<li><strong>Moods:</strong> dramatic, soft, high-key, low-key, moody, bright and airy</li>
+</ul>
+<h3 id="2-specify-camera-equipment-when-needed">2. Specify Camera Equipment When Needed</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Shot with professional DSLR camera
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>85mm portrait lens for flattering compression
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>f/2.8 aperture for subject separation
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>ISO 100 for maximum image quality
+</span></code></pre></div>
+<h3 id="3-include-environmental-context">3. Include Environmental Context</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Modern corporate office environment
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Clean white seamless backdrop
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Urban rooftop with city skyline
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Natural outdoor setting with soft shadows
+</span></code></pre></div>
+<h3 id="4-layer-your-descriptions">4. Layer Your Descriptions</h3>
+<p>Start broad, then add specifics:
+1. Subject type: "Professional business portrait"
+2. Add specifics: "of a confident executive"
+3. Include environment: "in a modern office setting"
+4. Specify lighting: "with soft natural window light"
+5. Add technical: "shot with 85mm lens, shallow depth of field"
+6. Define mood: "conveying leadership and approachability"</p>
+<h3 id="5-use-structured-formatting">5. Use Structured Formatting</h3>
+<p><strong>Method 1: Paragraph Style</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Professional corporate headshot of a business executive, standing confidently in a modern office environment. Clean business attire, direct eye contact with camera, subtle smile conveying approachability. Soft natural lighting from large office windows, complemented by subtle fill lighting. Shot with 85mm lens at f/2.8 for subject separation. Modern, clean aesthetic with neutral color palette. High-end corporate photography style.
+</div>
+
+<p><strong>Method 2: Categorized Style</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+SUBJECT: Corporate executive, professional attire
+POSE: Standing confidently, direct eye contact, subtle smile
+ENVIRONMENT: Modern office, clean professional setting
+LIGHTING: Soft natural window light with fill lighting
+CAMERA: 85mm lens, f/2.8 aperture, shallow depth of field
+STYLE: High-end corporate photography, clean modern aesthetic
+MOOD: Confident, approachable, professional leadership
+</div>
+
+<p><strong>Method 3: JSON Structure</strong> (for complex requirements)</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;subject&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;professional business portrait&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;pose&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;confident standing position, direct gaze&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;environment&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;modern corporate office&quot;</span><span class="p">,</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;lighting&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nt">&quot;primary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;soft natural window light&quot;</span><span class="p">,</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">&quot;secondary&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;subtle fill lighting&quot;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="nt">&quot;camera&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">    </span><span class="nt">&quot;lens&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;85mm&quot;</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">    </span><span class="nt">&quot;aperture&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f/2.8&quot;</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">    </span><span class="nt">&quot;style&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;professional headshot&quot;</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="nt">&quot;mood&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;confident, approachable, executive presence&quot;</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="advanced-example-templates">Advanced Example Templates</h2>
+<h3 id="template-1-corporate-executive">Template 1: Corporate Executive</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Professional executive portrait: [SUBJECT] in sharp business attire, standing confidently with hands [HAND_POSITION], direct eye contact conveying [MOOD]. Modern corporate environment with [BACKGROUND_DETAIL]. Studio lighting setup with soft key light from camera left, subtle fill light, rim lighting for separation. Shot with 85mm portrait lens at f/2.8, shallow depth of field. High-end corporate photography style, clean composition, neutral professional color palette.
+</div>
+
+<h3 id="template-2-creative-professional">Template 2: Creative Professional</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Creative professional portrait: [SUBJECT] in [ATTIRE_STYLE], positioned [POSE] in [CREATIVE_ENVIRONMENT]. Natural lighting from [LIGHT_SOURCE], creating [LIGHT_QUALITY] illumination. Environmental storytelling elements including [PROPS/CONTEXT]. Documentary photography style with [LENS_TYPE], capturing authentic [MOMENT/EXPRESSION]. Color palette of [COLORS] to reflect [BRAND/PERSONALITY].
+</div>
+
+<h3 id="template-3-lifestylepersonal-brand">Template 3: Lifestyle/Personal Brand</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Lifestyle portrait: [SUBJECT] in [SETTING], wearing [CASUAL_ATTIRE], engaged in [ACTIVITY/POSE]. Natural [TIME_OF_DAY] lighting creating [MOOD], shot in [LOCATION_TYPE]. [CAMERA_SPEC] for [DEPTH_EFFECT]. Lifestyle photography aesthetic focusing on [BRAND_ATTRIBUTES]. Authentic, relatable, [EMOTIONAL_TONE] atmosphere.
+</div>
+
+<h2 id="quality-control-checklist">Quality Control Checklist</h2>
+<p>Before submitting your prompt, verify:
+- [ ] Subject is clearly described
+- [ ] Pose/positioning is specific
+- [ ] Lighting type and direction are specified
+- [ ] Environment/background is detailed
+- [ ] Camera/technical specs enhance the vision
+- [ ] Mood and style are clearly communicated
+- [ ] No conflicting elements
+- [ ] Professional photography language is used
+- [ ] The prompt flows logically from main subject to details</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Effective prompt engineering for nano banana combines artistic vision with technical precision. By following these principles and studying the examples provided, you'll be able to consistently generate professional-quality portraits that meet your specific requirements. Remember: specificity, structure, and professional photography terminology are your keys to success.</p>
+<p>Practice with these templates, adapt them to your needs, and develop your own style of prompt engineering. The more specific and well-structured your prompts, the better your results will be.</p>
+<h1 id="appendix-a-professional-photography-language-reference">Appendix A: Professional Photography Language Reference</h1>
+<p><em>A Comprehensive Guide to Photography Terminology for AI Image Generation</em></p>
+<h2 id="usage-guidelines-for-ai-prompts">Usage Guidelines for AI Prompts</h2>
+<h3 id="combining-technical-terms">Combining Technical Terms</h3>
+<p><strong>Example Structure:</strong>
+"Professional portrait shot with 85mm lens at f/1.4, creating shallow depth of field with creamy bokeh. Rembrandt lighting setup using softbox as key light, subtle fill light to control shadows."</p>
+<h3 id="balancing-technical-and-creative">Balancing Technical and Creative</h3>
+<ul>
+<li>Use 2-3 technical terms per prompt maximum</li>
+<li>Combine with creative descriptors for mood</li>
+<li>Prioritize terms that affect the final aesthetic</li>
+<li>Avoid conflicting technical specifications</li>
+</ul>
+<h3 id="common-effective-combinations">Common Effective Combinations</h3>
+<p><strong>Corporate Professional:</strong>
+- "85mm lens, f/2.8, even studio lighting, neutral background"</p>
+<p><strong>Artistic Portrait:</strong>
+- "Shallow depth of field, dramatic side lighting, black and white, high contrast"</p>
+<p><strong>Environmental Portrait:</strong>
+- "35mm lens, natural window light, environmental storytelling, documentary style"</p>
+<p>This appendix serves as a reference guide for understanding and effectively using professional photography terminology in both traditional photography and AI image generation prompts.</p>
+<hr />
+<h2 id="camera-equipment-technical-specifications">Camera Equipment &amp; Technical Specifications</h2>
+<h3 id="lenses-focal-lengths">Lenses &amp; Focal Lengths</h3>
+<p><strong>Portrait Lenses (85mm-135mm)</strong>
+- <strong>85mm lens</strong>: The gold standard for portraits; provides natural perspective with subtle compression
+- <strong>105mm lens</strong>: Slightly more compressed than 85mm; excellent for isolating subjects
+- <strong>135mm lens</strong>: Maximum compression for dramatic effect; requires more distance from subject</p>
+<p><strong>Standard Lenses (35mm-50mm)</strong>
+- <strong>50mm lens</strong>: "Normal" lens that mimics human vision; versatile for environmental portraits
+- <strong>35mm lens</strong>: Wider field of view; good for environmental storytelling and context</p>
+<p><strong>Wide Angle Lenses (14mm-35mm)</strong>
+- <strong>24mm lens</strong>: Wide perspective; can create dramatic environmental context
+- <strong>35mm lens</strong>: Moderate wide angle; includes more environment without distortion</p>
+<h3 id="aperture-settings-f-stops">Aperture Settings (f-stops)</h3>
+<p><strong>Wide Apertures (Shallow Depth of Field)</strong>
+- <strong>f/1.4</strong>: Maximum background blur (bokeh); extremely shallow focus
+- <strong>f/1.8</strong>: Strong subject isolation; creamy background separation
+- <strong>f/2.8</strong>: Good separation while maintaining some background context</p>
+<p><strong>Medium Apertures (Balanced Focus)</strong>
+- <strong>f/4.0</strong>: Moderate depth of field; good for environmental portraits
+- <strong>f/5.6</strong>: Standard portrait aperture; sharp subject with blurred background</p>
+<p><strong>Narrow Apertures (Deep Focus)</strong>
+- <strong>f/8.0</strong>: Sharp focus throughout most of the frame
+- <strong>f/11</strong>: Maximum sharpness across the entire image</p>
+<h3 id="camera-types-formats">Camera Types &amp; Formats</h3>
+<p><strong>Professional DSLR/Mirrorless</strong>
+- <strong>Canon 5D Mark IV</strong>: Full-frame professional camera
+- <strong>Sony A7R IV</strong>: High-resolution mirrorless system
+- <strong>Nikon D850</strong>: Professional DSLR with exceptional detail</p>
+<p><strong>Medium Format</strong>
+- <strong>Hasselblad</strong>: Premium quality with distinctive look
+- <strong>Fujifilm GFX</strong>: Modern medium format digital</p>
+<p><strong>Film References</strong>
+- <strong>35mm film</strong>: Classic film format with characteristic grain
+- <strong>Medium format film</strong>: Larger negative size for superior quality</p>
+<hr />
+<h2 id="lighting-terminology">Lighting Terminology</h2>
+<h3 id="studio-lighting-setup">Studio Lighting Setup</h3>
+<p><strong>Key Light</strong>
+- Primary light source illuminating the subject
+- Usually positioned 45 degrees from camera axis
+- Determines the overall exposure and main shadows</p>
+<p><strong>Fill Light</strong>
+- Secondary light that reduces shadow contrast
+- Typically softer and less intense than key light
+- Positioned opposite the key light</p>
+<p><strong>Rim Light/Hair Light</strong>
+- Back light that creates separation from background
+- Highlights the edge/outline of the subject
+- Creates depth and dimensionality</p>
+<p><strong>Background Light</strong>
+- Illuminates the backdrop separately from subject
+- Controls background tone and separation
+- Can create gradients or even illumination</p>
+<h3 id="lighting-patterns">Lighting Patterns</h3>
+<p><strong>Rembrandt Lighting</strong>
+- Classic portrait lighting creating small triangle of light on shadow side of face
+- Key light positioned high and to one side
+- Creates dramatic, artistic mood</p>
+<p><strong>Butterfly Lighting</strong>
+- Light directly in front and above subject
+- Creates butterfly-shaped shadow under nose
+- Flattering for most face shapes</p>
+<p><strong>Split Lighting</strong>
+- Light positioned 90 degrees to side of subject
+- Half the face in light, half in shadow
+- Creates dramatic, moody effect</p>
+<p><strong>Loop Lighting</strong>
+- Slight variation of Rembrandt with softer shadows
+- Small shadow loop from nose on cheek
+- Natural, flattering look</p>
+<h3 id="light-quality-descriptions">Light Quality Descriptions</h3>
+<p><strong>Hard Light</strong>
+- Direct, undiffused light source
+- Creates sharp, defined shadows
+- High contrast between highlights and shadows
+- Example: Direct sunlight, bare flash</p>
+<p><strong>Soft Light</strong>
+- Diffused or bounced light source
+- Gradual transition between light and shadow
+- Even, flattering illumination
+- Example: Overcast sky, softbox, umbrella</p>
+<p><strong>Directional Light</strong>
+- Light with clear direction creating modeling
+- Reveals form and texture through shadows
+- Creates three-dimensional appearance</p>
+<p><strong>Flat Light</strong>
+- Even illumination with minimal shadows
+- Reduces texture and dimension
+- Good for eliminating imperfections</p>
+<hr />
+<h2 id="natural-lighting-conditions">Natural Lighting Conditions</h2>
+<h3 id="time-based-lighting">Time-Based Lighting</h3>
+<p><strong>Golden Hour</strong>
+- First/last hour of sunlight
+- Warm, soft, directional light
+- Long shadows and golden color temperature
+- Most flattering natural light for portraits</p>
+<p><strong>Blue Hour</strong>
+- Period just after sunset/before sunrise
+- Even, soft blue-toned light
+- No harsh shadows
+- Romantic, moody atmosphere</p>
+<p><strong>Overcast</strong>
+- Cloudy sky acting as giant softbox
+- Even, diffused lighting
+- No harsh shadows
+- Consistent light throughout day</p>
+<p><strong>Midday Sun</strong>
+- Direct overhead sunlight
+- Hard, unflattering shadows under eyes and nose
+- High contrast
+- Generally avoided for portraits</p>
+<h3 id="direction-quality">Direction &amp; Quality</h3>
+<p><strong>Window Light</strong>
+- Soft, directional natural light
+- Size of window affects light quality
+- North-facing windows provide consistent light
+- Can be modified with curtains or diffusion</p>
+<p><strong>Backlighting</strong>
+- Subject between camera and light source
+- Creates rim lighting effect
+- Can produce lens flare or silhouettes
+- Dramatic and atmospheric</p>
+<p><strong>Side Lighting</strong>
+- Light coming from subject's side
+- Reveals texture and form
+- Creates natural shadow patterns
+- Good for dramatic portraits</p>
+<hr />
+<h2 id="depth-of-field-terminology">Depth of Field Terminology</h2>
+<h3 id="focus-effects">Focus Effects</h3>
+<p><strong>Shallow Depth of Field</strong>
+- Small area in sharp focus
+- Background/foreground heavily blurred
+- Created by wide apertures (f/1.4, f/1.8)
+- Isolates subject from environment</p>
+<p><strong>Deep Depth of Field</strong>
+- Large area in sharp focus
+- Background remains recognizable
+- Created by narrow apertures (f/8, f/11)
+- Good for environmental context</p>
+<p><strong>Bokeh</strong>
+- Quality of out-of-focus areas
+- Smooth, creamy blur is desirable
+- Affected by lens design and aperture shape
+- "Good bokeh" = pleasing background blur</p>
+<p><strong>Focus Fall-off</strong>
+- Gradual transition from sharp to blurred
+- Rate depends on aperture and focal length
+- Longer lenses create faster fall-off</p>
+<hr />
+<h2 id="composition-framing">Composition &amp; Framing</h2>
+<h3 id="classic-rules">Classic Rules</h3>
+<p><strong>Rule of Thirds</strong>
+- Frame divided into nine equal sections
+- Subject positioned at intersection points
+- Creates more dynamic composition than centering</p>
+<p><strong>Leading Lines</strong>
+- Lines in image that draw eye to subject
+- Can be architectural elements, natural features
+- Creates depth and guides viewer attention</p>
+<p><strong>Negative Space</strong>
+- Empty areas around subject
+- Provides breathing room in composition
+- Can be used for text overlay in branding</p>
+<p><strong>Framing</strong>
+- Using elements to create border around subject
+- Windows, doorways, natural elements
+- Draws attention to subject</p>
+<h3 id="portrait-specific-framing">Portrait-Specific Framing</h3>
+<p><strong>Headshot</strong>
+- Cropped at shoulders or upper chest
+- Focus on face and expression
+- Standard for corporate and acting portfolios</p>
+<p><strong>Three-Quarter Length</strong>
+- Cropped at mid-thigh or knee
+- Shows more body language and pose
+- Good balance of subject and environment</p>
+<p><strong>Full-Body</strong>
+- Shows entire subject from head to toe
+- Includes more environmental context
+- Requires careful attention to posing</p>
+<p><strong>Environmental Portrait</strong>
+- Subject shown in their natural environment
+- Context tells story about person
+- Balances subject with surroundings</p>
+<hr />
+<h2 id="photography-styles-genres">Photography Styles &amp; Genres</h2>
+<h3 id="commercial-photography">Commercial Photography</h3>
+<p><strong>Corporate Headshots</strong>
+- Clean, professional appearance
+- Even lighting to minimize shadows
+- Neutral backgrounds
+- Conservative cropping and composition</p>
+<p><strong>Executive Portraits</strong>
+- Authoritative and confident mood
+- Higher production value
+- Environmental context of success
+- Premium lighting and retouching</p>
+<p><strong>LinkedIn Profile Photos</strong>
+- Approachable but professional
+- Clean background
+- Direct eye contact
+- Conservative business attire</p>
+<h3 id="editorial-photography">Editorial Photography</h3>
+<p><strong>Magazine Style</strong>
+- High production value
+- Creative lighting and composition
+- Fashion-forward styling
+- Artistic interpretation of subject</p>
+<p><strong>Documentary Style</strong>
+- Natural, candid moments
+- Environmental storytelling
+- Authentic expressions and poses
+- Less controlled lighting</p>
+<p><strong>Fashion Photography</strong>
+- Emphasis on styling and clothing
+- Creative poses and expressions
+- High contrast or dramatic lighting
+- Artistic composition</p>
+<h3 id="fine-art-photography">Fine Art Photography</h3>
+<p><strong>Portrait Art</strong>
+- Artistic interpretation over commercial appeal
+- Creative use of light and shadow
+- Unique perspectives and compositions
+- Emotional or conceptual storytelling</p>
+<p><strong>Black and White</strong>
+- Emphasis on form, texture, and contrast
+- Timeless, classic aesthetic
+- Dramatic lighting effects
+- Removes color distractions</p>
+<hr />
+<h2 id="color-temperature-white-balance">Color Temperature &amp; White Balance</h2>
+<h3 id="color-temperature-scale-kelvin">Color Temperature Scale (Kelvin)</h3>
+<p><strong>Warm Light (2700K-3200K)</strong>
+- Candlelight, tungsten bulbs
+- Golden, orange tones
+- Cozy, intimate feeling
+- Good for romantic or comfortable moods</p>
+<p><strong>Neutral Light (3200K-5500K)</strong>
+- Studio strobes, flash
+- Balanced, natural skin tones
+- Professional standard
+- Most flattering for portraits</p>
+<p><strong>Cool Light (5500K-7000K)</strong>
+- Daylight, overcast sky
+- Blue-white tones
+- Clean, modern feeling
+- Can appear clinical or professional</p>
+<p><strong>Very Cool Light (7000K+)</strong>
+- Shade, blue sky
+- Strong blue cast
+- Can create mood or technical issues
+- Often corrected in post-processing</p>
+<hr />
+<h2 id="post-processing-terms">Post-Processing Terms</h2>
+<h3 id="basic-adjustments">Basic Adjustments</h3>
+<p><strong>Exposure</strong>
+- Overall brightness of image
+- Affects highlights and shadows
+- Global adjustment affecting entire image</p>
+<p><strong>Contrast</strong>
+- Difference between lightest and darkest areas
+- High contrast = dramatic, punchy look
+- Low contrast = soft, muted appearance</p>
+<p><strong>Highlights/Shadows</strong>
+- Selective adjustment of bright/dark areas
+- Recovers detail in blown highlights
+- Opens up dark shadow areas</p>
+<h3 id="advanced-techniques_1">Advanced Techniques</h3>
+<p><strong>Dodge and Burn</strong>
+- Selectively lighten (dodge) or darken (burn) areas
+- Enhances natural light patterns
+- Adds dimension and modeling to face</p>
+<p><strong>Color Grading</strong>
+- Adjusting colors for mood and style
+- Separate control of highlights/shadows
+- Creates signature look or brand consistency</p>
+<p><strong>Skin Retouching</strong>
+- Removing blemishes and imperfections
+- Smoothing while maintaining texture
+- Professional standard varies by use case</p>
+<hr />
+<h2 id="professional-photography-equipment">Professional Photography Equipment</h2>
+<h3 id="studio-equipment">Studio Equipment</h3>
+<p><strong>Softbox</strong>
+- Fabric diffusion panel over light source
+- Creates soft, even illumination
+- Various sizes for different effects
+- Most common studio modifier</p>
+<p><strong>Umbrella</strong>
+- Reflective or shoot-through diffusion
+- Broader, softer light than direct flash
+- Portable and easy to set up
+- Less controlled than softbox</p>
+<p><strong>Beauty Dish</strong>
+- Large, shallow reflector
+- Soft yet directional light
+- Popular for fashion and beauty work
+- Creates distinctive catch-light pattern</p>
+<p><strong>Grid/Honeycomb</strong>
+- Restricts light spread
+- Creates more directional beam
+- Prevents light spill
+- Good for background separation</p>
+<h3 id="modifiers-accessories">Modifiers &amp; Accessories</h3>
+<p><strong>Reflector</strong>
+- Bounces light back onto subject
+- Fills in shadows naturally
+- Available in various colors (white, silver, gold)
+- Essential for outdoor portraits</p>
+<p><strong>Flag/Gobo</strong>
+- Blocks or shapes light
+- Creates shadows or negative fill
+- Controls light spill
+- Professional lighting control</p>
+<p><strong>Diffusion Panel</strong>
+- Large translucent material
+- Softens harsh sunlight
+- Creates even illumination
+- Portable solution for location work</p>
+<hr />
+<h2 id="quality-descriptors">Quality Descriptors</h2>
+<h3 id="image-quality-terms">Image Quality Terms</h3>
+<p><strong>Tack Sharp</strong>
+- Extremely sharp focus
+- No motion blur or focus issues
+- Professional standard for portraits
+- Requires proper technique and equipment</p>
+<p><strong>Creamy Bokeh</strong>
+- Smooth, pleasant background blur
+- No harsh edges or distracting elements
+- Sign of quality lens and proper technique
+- Desirable for subject isolation</p>
+<p><strong>Rich Tones</strong>
+- Full range of colors and contrast
+- No blown highlights or blocked shadows
+- Professional color grading
+- Premium post-processing quality</p>
+<p><strong>Natural Skin Tones</strong>
+- Accurate color reproduction
+- Proper white balance
+- Flattering but realistic
+- Professional standard for portraits</p>
+<h3 id="professional-standards">Professional Standards</h3>
+<p><strong>Editorial Quality</strong>
+- Magazine-ready production values
+- Perfect technical execution
+- Creative and engaging composition
+- High-end retouching standards</p>
+<p><strong>Commercial Grade</strong>
+- Suitable for advertising and marketing
+- Consistent brand representation
+- Professional lighting and styling
+- Polished final presentation</p>
+<p><strong>Fine Art Standard</strong>
+- Museum-quality printing and finishing
+- Artistic vision and execution
+- Unique perspective and interpretation
+- Long-term archival considerations</p>
+<hr />
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../six_part_prompting_framework/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../prompt_driven_development/readme/" class="md-footer__link md-footer__link--next" aria-label="Next: Prompt Driven Development (PDD)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Prompt Driven Development (PDD)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Panaversity. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/panaversity/" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/panaversity/?igsh=cmljY3A2bmcyNzl3#" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCV1ZbnHzA7FwG7XXYYzE84w" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/panaversity/posts/?feedView=all" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

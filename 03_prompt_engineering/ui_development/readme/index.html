@@ -1,0 +1,2623 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/03_prompt_engineering/ui_development/readme/">
+      
+      
+        <link rel="prev" href="../../prompt_driven_development/readme/">
+      
+      
+        <link rel="next" href="../../ux_design/readme/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>UI Development by Prompting - Learn Agentic AI from Low Code to Code - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ui-development-by-prompting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-header__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Agentic AI from Low Code to Code - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UI Development by Prompting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-nav__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Agentic AI from Low Code to Code - Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learn Agentic AI: From Low-Code to Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00 agentic web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            00 agentic web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/implications_for_stakeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3: Implications for Stakeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/panaversity-openai-vision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Vision for an AI-Driven Future Learning Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Blueprint to Power the Future Web with AI - Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 agentic org
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            01 agentic org
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/agentic_org_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Learning Guide to the Future of Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/graduate_level_quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Graduate Level Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCQ Quiz: The Agentic Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Rise of Agentic Organizations: How AI Is Redefining the Future of Work and Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 ai and human readiness
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            02 ai and human readiness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/ai_transformation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating AI Transformation: A Strategic Guide for Beginners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI and Human Readiness in IT: Graduate-Level Assessment Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating the Crossroads of AI and Human Readiness in IT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 prompt engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            03 prompt engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_engineering_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Guide to Context Engineering for AI Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../six_part_prompting_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Image generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Image generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Tutorial for Nano Banana
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prompt driven development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Prompt driven development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_driven_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Driven Development (PDD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ui development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ui development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    UI Development by Prompting
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI Development by Prompting
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lovable-ai-a-complete-professional-step-by-step-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lovable AI — A Complete, Professional, Step-by-Step Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-lovable-is-and-why-its-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) What Lovable Is (and why it’s useful)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Get Set Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plan-first-then-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Plan First, Then Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-understand-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Understand the Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-make-targeted-visual-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Make Targeted Visual Edits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-add-a-landing-page-second-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Add a Landing Page (Second Feature)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-meta-prompting-with-chat-mode-strongly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Meta-Prompting with Chat Mode (Strongly Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-add-advanced-ui-components-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Add Advanced UI Components (Animations)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-project-knowledge-persistent-rules-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Project Knowledge (Persistent Rules &amp; Context)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-version-control-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Version Control: Git &amp; GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-add-a-backend-with-supabase-auth-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      11) Add a Backend with Supabase (Auth + Data)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      12) Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-debugging-problem-solving-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      13) Debugging &amp; Problem-Solving Tactics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reference-prompts-copy-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      14) Reference Prompts (Copy-Ready)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      15) Checklists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      16) Where to Go Next
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16) Where to Go Next">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thought
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ux design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ux design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ux_design/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UX Design by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ux_design/uxpilot_workflow_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Video generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Video generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../video_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Video Generation Tutorial for Google Veo 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04 no code agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            04 no code agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/applied_self_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applied Self-Learning Guide — What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/class_handson_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Project: Assignments Grading and Feedback Agentic System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/pre-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Setup Guide: Getting Ready for Week 2 Session 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/what_is_an_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents VS Chatbots - Student's Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05 knowledge connections
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            05 knowledge connections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/01_file_search_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 1: File Search with Vector Stores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/02_connectors_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 2: Connectors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/03_mcp_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 3: MCP Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/04_mcp_nodes_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4: MCP Nodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 5: Connecting Knowledge Safely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06 visual patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            06 visual patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06_visual_patterns/lab_agentic_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab: Customer Support System Using All 4 Agentic Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06_visual_patterns/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 6: Visual and Agentic Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    07 deploy chatkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            07 deploy chatkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07_deploy_chatkit/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 7: Deploy with ChatKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Assignments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/01_agentic_ai_usecase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment: Find One Real Agentic AI Use Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teacher guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teacher guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_feedback_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    💬 Standard Feedback Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_grading_criteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧮 Grading Rubric — “Find One Real Agentic AI Use Case”
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_sample_eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧾 Example Teacher Evaluation (Sample)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lovable-ai-a-complete-professional-step-by-step-tutorial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lovable AI — A Complete, Professional, Step-by-Step Tutorial
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-lovable-is-and-why-its-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      1) What Lovable Is (and why it’s useful)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-set-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      2) Get Set Up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-plan-first-then-prompt" class="md-nav__link">
+    <span class="md-ellipsis">
+      3) Plan First, Then Prompt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-understand-the-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      4) Understand the Interface
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-make-targeted-visual-edits" class="md-nav__link">
+    <span class="md-ellipsis">
+      5) Make Targeted Visual Edits
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-add-a-landing-page-second-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      6) Add a Landing Page (Second Feature)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-meta-prompting-with-chat-mode-strongly-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      7) Meta-Prompting with Chat Mode (Strongly Recommended)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-add-advanced-ui-components-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      8) Add Advanced UI Components (Animations)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-project-knowledge-persistent-rules-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      9) Project Knowledge (Persistent Rules &amp; Context)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-version-control-git-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      10) Version Control: Git &amp; GitHub
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-add-a-backend-with-supabase-auth-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      11) Add a Backend with Supabase (Auth + Data)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      12) Deployment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-debugging-problem-solving-tactics" class="md-nav__link">
+    <span class="md-ellipsis">
+      13) Debugging &amp; Problem-Solving Tactics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-reference-prompts-copy-ready" class="md-nav__link">
+    <span class="md-ellipsis">
+      14) Reference Prompts (Copy-Ready)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-checklists" class="md-nav__link">
+    <span class="md-ellipsis">
+      15) Checklists
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-where-to-go-next" class="md-nav__link">
+    <span class="md-ellipsis">
+      16) Where to Go Next
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="16) Where to Go Next">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-thought" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Thought
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="ui-development-by-prompting">UI Development by Prompting</h1>
+<p><a href="https://www.youtube.com/watch?v=YLjopoEnPi8">Watch: Lovable FULL Tutorial - For COMPLETE Beginners (No Experience Needed)</a></p>
+<p>Watch this Video and Tutorial based on this tutorial is also included below.</p>
+<p><a href="https://lovable.dev/how-to/ai-and-machine-learning/ai-powered-prompt-engineering">Build Ai-powered Prompt Engineering Projects with AI</a></p>
+<p><a href="https://lovable.dev/blog/2025-01-16-lovable-prompting-handbook">The Lovable Prompting Bible</a></p>
+<h2 id="lovable-ai-a-complete-professional-step-by-step-tutorial">Lovable AI — A Complete, Professional, Step-by-Step Tutorial</h2>
+<p>This tutorial distills the full workflow shown in the provided <a href="https://www.youtube.com/watch?v=YLjopoEnPi8">video</a> into a crisp, repeatable guide—from your first prompt to a deployed full-stack app with authentication, data storage, version control, and UI polish.</p>
+<hr />
+<h2 id="1-what-lovable-is-and-why-its-useful">1) What Lovable Is (and why it’s useful)</h2>
+<ul>
+<li><strong>AI app builder</strong> that can generate full-stack web apps from natural-language prompts.</li>
+<li><strong>No coding required</strong>, but you can edit/export code if you want (the in-editor code browser is a <strong>paid</strong> feature).</li>
+<li>Works best when you <strong>build in small steps</strong> and iterate.</li>
+<li>Supports <strong>importing Figma</strong>, <strong>attaching images</strong> as design references, and <strong>remixing</strong> community projects.</li>
+</ul>
+<blockquote>
+<p>Credits: It’s free to start with daily credits. Each action consumes credits; bigger builds cost more than small edits.</p>
+</blockquote>
+<hr />
+<h2 id="2-get-set-up">2) Get Set Up</h2>
+<ol>
+<li>Go to <strong>lovable.dev</strong> and create/sign in to your account.</li>
+<li>Confirm your <strong>credit balance</strong>; you’ll accrue more daily.</li>
+<li>(Optional) Upgrade if you need private projects or the built-in <strong>code browser</strong>.</li>
+</ol>
+<hr />
+<h2 id="3-plan-first-then-prompt">3) Plan First, Then Prompt</h2>
+<p>Lovable rewards clarity. Before you start, outline:</p>
+<ul>
+<li><strong>What you’re building</strong> (MVP scope).</li>
+<li><strong>Pages &amp; features</strong> (list them).</li>
+<li><strong>Visual style</strong> (colors, tone).</li>
+<li><strong>Future steps</strong> (add later, not all at once).</li>
+</ul>
+<p><strong>Example MVP</strong> (from the video): a <strong>Macro Calculator</strong> (calories/protein/fat targets), later expanded into a fitness tracker.</p>
+<p><strong>Initial prompt (sample):</strong></p>
+<blockquote>
+<p>“Create a simple macro-tracking app. Users enter gender, age, height, weight, goal (lose/maintain/gain), and activity level. Recommend daily calories, protein, fat, etc. Use a clean UI with an <strong>orange + black</strong> theme. Keep it simple; we’ll add features later.”</p>
+</blockquote>
+<p>Press <strong>Enter</strong> to generate.</p>
+<hr />
+<h2 id="4-understand-the-interface">4) Understand the Interface</h2>
+<ul>
+<li>
+<p><strong>Left panel</strong>: your conversation and controls with Lovable.</p>
+</li>
+<li>
+<p><strong>Default mode</strong>: Lovable acts and modifies the project.</p>
+</li>
+<li><strong>Chat mode</strong>: Lovable only <strong>answers questions</strong>—it doesn’t change code.</li>
+<li><strong>Attach</strong>: Add images for visual guidance.</li>
+<li><strong>(Later) Knowledge</strong>: Persistent rules &amp; docs (see §9).</li>
+<li>
+<p><strong>Right side</strong>: <strong>Live Preview</strong> of your app.</p>
+</li>
+<li>
+<p>Top bar: <strong>Refresh</strong>, <strong>Pop-out</strong>, <strong>Route picker</strong> (choose pages), <strong>Device sizes</strong> (desktop/tablet/phone).</p>
+</li>
+</ul>
+<p><strong>Tip:</strong> After a build, <strong>test the UI</strong> immediately to catch issues early.</p>
+<hr />
+<h2 id="5-make-targeted-visual-edits">5) Make Targeted Visual Edits</h2>
+<p>Click <strong>Edit</strong> → select an element in the preview → describe a change.</p>
+<p>Example:</p>
+<blockquote>
+<p>“Underline this title in orange.”</p>
+</blockquote>
+<p>Lovable applies the change precisely to the selected component.</p>
+<p><strong>If you don’t like a change:</strong></p>
+<ul>
+<li>Use <strong>History</strong> (top bar) to <strong>Restore</strong> a prior state.</li>
+<li>Use <strong>Code diff</strong> (for paid code view) to see exactly what changed.</li>
+</ul>
+<hr />
+<h2 id="6-add-a-landing-page-second-feature">6) Add a Landing Page (Second Feature)</h2>
+<p>Prompt:</p>
+<blockquote>
+<p>“Create a <strong>stylish landing page</strong> named <strong>‘Tim’s Macro App’</strong> with a clear call-to-action that routes to the calculator.”</p>
+</blockquote>
+<p>Result: You’ll now see two routes, e.g. <code>/</code> (landing) and <code>/calculator</code>.</p>
+<hr />
+<h2 id="7-meta-prompting-with-chat-mode-strongly-recommended">7) Meta-Prompting with Chat Mode (Strongly Recommended)</h2>
+<p>When you <strong>know the outcome</strong> but <strong>not the best instructions</strong>, use <strong>Chat mode</strong> to have Lovable <em>write the prompt for Lovable</em>.</p>
+<p>Example (in <strong>Chat mode</strong>):</p>
+<blockquote>
+<p>“I want a <strong>dark/light mode toggle</strong> site-wide. Help me craft a clear, safe prompt for the model to implement this without breaking the project.”</p>
+</blockquote>
+<p>Copy Lovable’s proposed prompt, <strong>exit Chat mode</strong>, paste it, and run.</p>
+<p><strong>Prompting tip:</strong> The <strong>first and last lines</strong> of your prompt carry extra weight—place key constraints there.</p>
+<hr />
+<h2 id="8-add-advanced-ui-components-animations">8) Add Advanced UI Components (Animations)</h2>
+<p>Lovable works well with high-quality, pre-authored component prompts (e.g., from <strong>21st.dev</strong>, a curated collection the speaker recommends).
+Workflow:</p>
+<ol>
+<li>Copy the component’s detailed prompt (it often includes usage and code fragments).</li>
+<li>Paste into Lovable and <strong>add a final line</strong> like:</li>
+</ol>
+<blockquote>
+<p>“Integrate this on the <strong>home/landing page</strong> only.”
+3. Run and verify visually.</p>
+</blockquote>
+<p><strong>Note:</strong> Complex animations can work out-of-the-box, but be ready to iterate.</p>
+<hr />
+<h2 id="9-project-knowledge-persistent-rules-context">9) Project Knowledge (Persistent Rules &amp; Context)</h2>
+<p>Open <strong>Knowledge</strong> (left panel → <strong>+</strong> → Knowledge). Add rules Lovable should always follow, e.g.:</p>
+<ul>
+<li>“Every component must support <strong>light and dark</strong> themes and integrate with the existing theme toggle.”</li>
+<li>“Prefer <strong>simple, clean UI</strong>; avoid unnecessary complexity.”</li>
+</ul>
+<p>Use bullet points; keep each rule crisp. Update as the project grows.</p>
+<hr />
+<h2 id="10-version-control-git-github">10) Version Control: Git &amp; GitHub</h2>
+<ol>
+<li>Click <strong>Sync to GitHub</strong> (top bar).</li>
+<li>Connect your GitHub account/org and create the repo.</li>
+<li>Lovable pushes the code; <strong>two-way sync</strong> lets you commit via GitHub and pull back into Lovable.</li>
+</ol>
+<p><strong>If preview breaks after linking GitHub</strong> (e.g., “blank app”):
+Prompt Lovable:</p>
+<blockquote>
+<p>“After connecting GitHub, the app preview is blank. <strong>Fix the preview</strong> and ensure the app builds and runs.”</p>
+</blockquote>
+<hr />
+<h2 id="11-add-a-backend-with-supabase-auth-data">11) Add a Backend with Supabase (Auth + Data)</h2>
+<p>You’ll need a backend for <strong>accounts</strong>, <strong>private data</strong>, and <strong>protected pages</strong>.</p>
+<p><strong>A. Connect Supabase</strong></p>
+<ol>
+<li>Click the <strong>green Supabase button</strong> (top right in Lovable).</li>
+<li>Sign in (GitHub is convenient) and <strong>create a new project</strong> (choose region, set a strong password).</li>
+<li>Back in Lovable, click <strong>Connect</strong> to link the project.</li>
+</ol>
+<p><strong>B. Ask for Auth + Protected Route(s)</strong>
+Prompt:</p>
+<blockquote>
+<p>“Enable <strong>user sign-up/sign-in</strong>. <strong>Protect <code>/calculator</code></strong> so only authenticated users can access it. When a user clicks ‘Calculate’, <strong>save the calculation</strong> to the database under their account.”</p>
+</blockquote>
+<p>Lovable will generate database changes (<strong>migrations</strong>) and access rules (RLS policies).</p>
+<ul>
+<li>When asked about storing extra profile fields, you can keep it minimal (name, email) to start.</li>
+<li><strong>Review migrations</strong> before applying; then click <strong>Apply changes</strong>.</li>
+</ul>
+<p><strong>C. Test Authentication</strong></p>
+<ul>
+<li>Use <strong>Sign Up / Sign In</strong> from the UI.</li>
+<li>Confirm the email if required (Supabase often sends confirmation emails by default).</li>
+<li>Verify that visiting <code>/calculator</code> requires sign-in.</li>
+</ul>
+<p><strong>D. Persist and View Data (Calculation Log)</strong>
+If logs aren’t visible yet, ask:</p>
+<blockquote>
+<p>“Add a <strong>Calculation History</strong> section (or a new page) that lists the user’s past calculations.”</p>
+</blockquote>
+<p>Test: Perform a calculation, then verify it appears in <strong>History</strong>.</p>
+<hr />
+<h2 id="12-deployment">12) Deployment</h2>
+<ul>
+<li>Click <strong>Publish</strong> to build and deploy.</li>
+<li>Review <strong>Security</strong> warnings.</li>
+<li>Use the generated URL to access the live app.</li>
+<li>(Optional) Configure <strong>Custom Domains</strong> and <strong>SEO</strong> from project settings.</li>
+</ul>
+<hr />
+<h2 id="13-debugging-problem-solving-tactics">13) Debugging &amp; Problem-Solving Tactics</h2>
+<ul>
+<li><strong>Iterate small.</strong> Add one feature at a time; verify before moving on.</li>
+<li><strong>Switch to Chat mode</strong> to ask “what/why/how” questions about migrations, policies, or errors.</li>
+<li><strong>Be explicit</strong>: paste error messages, attach screenshots of misbehavior, and explain what you expected vs. what happened.</li>
+<li><strong>Use History</strong> to roll back to a known good state.</li>
+<li><strong>State constraints</strong> at the <strong>start/end</strong> of prompts to keep the model on track.</li>
+<li>
+<p><strong>Supabase gotchas</strong>:</p>
+</li>
+<li>
+<p>Confirm emails if sign-in “succeeds” but you remain unauthenticated.</p>
+</li>
+<li>Ensure <strong>RLS policies</strong> allow the operations you need (read/write for the owner).</li>
+<li><strong>GitHub sync issues</strong>: If sync causes build hiccups, ask Lovable to <strong>refresh/rebuild</strong> the preview and re-link if needed.</li>
+</ul>
+<hr />
+<h2 id="14-reference-prompts-copy-ready">14) Reference Prompts (Copy-Ready)</h2>
+<p><strong>A. Landing page</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Create a stylish landing page titled “Tim’s Macro App” that promotes the calculator with a single primary CTA button routing to /calculator. Use the existing orange + black theme and keep the layout clean and modern.
+</div>
+
+<p><strong>B. Dark/Light toggle (site-wide)</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Add a persistent dark/light mode toggle. Persist the user’s choice. Ensure all components support both themes and integrate with the existing theme system. Do not regress accessibility or contrast. Test across all pages.
+</div>
+
+<p><strong>C. Auth + Protected Routes + Logging</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Integrate Supabase auth (email/password). Add sign-up and sign-in flows. Protect /calculator so only authenticated users can access it. On each calculation, save the inputs and computed outputs to a user-owned table with RLS. Add a History section that lists the signed-in user’s past calculations.
+</div>
+
+<p><strong>D. Animated hero on home page</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Integrate this animation component into the home/landing page only. Keep performance acceptable on mobile and preserve accessibility (focus order, reduced motion preference).
+</div>
+
+<hr />
+<h2 id="15-checklists">15) Checklists</h2>
+<p><strong>Quick Start</strong></p>
+<ul>
+<li>[ ] Sign in to Lovable</li>
+<li>[ ] Draft MVP scope (1–2 features)</li>
+<li>[ ] Run the first build prompt</li>
+<li>[ ] Test the UI</li>
+</ul>
+<p><strong>Prompting</strong></p>
+<ul>
+<li>[ ] One feature per prompt</li>
+<li>[ ] Key constraints at start/end</li>
+<li>[ ] Use <strong>Chat mode</strong> to refine prompts</li>
+<li>[ ] Attach images if styling matters</li>
+</ul>
+<p><strong>Backend</strong></p>
+<ul>
+<li>[ ] Connect Supabase</li>
+<li>[ ] Enable auth; protect routes</li>
+<li>[ ] Apply migrations after review</li>
+<li>[ ] Verify data writes + reads with a real user</li>
+</ul>
+<p><strong>Versioning &amp; Release</strong></p>
+<ul>
+<li>[ ] Sync to GitHub (two-way)</li>
+<li>[ ] Use History for rollbacks</li>
+<li>[ ] Publish and test the live URL</li>
+<li>[ ] (Optional) Custom domain + SEO</li>
+</ul>
+<hr />
+<h2 id="16-where-to-go-next">16) Where to Go Next</h2>
+<ul>
+<li>Add <strong>profiles</strong> (usernames/avatars).</li>
+<li>Create <strong>meal plans</strong> or <strong>progress dashboards</strong>.</li>
+<li>Expand RLS policies for team/shared views.</li>
+<li>Instrument <strong>analytics</strong> once published.</li>
+<li>Document <strong>Knowledge</strong> rules as your design system hardens.</li>
+</ul>
+<hr />
+<h3 id="final-thought">Final Thought</h3>
+<p>Lovable shines when you <strong>stay incremental, precise, and test after every change</strong>. Use Chat mode to think with the tool, Knowledge to encode standards, Supabase for real data, and GitHub for reliability. You’ll move faster—and with far fewer surprises.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../prompt_driven_development/readme/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Prompt Driven Development (PDD)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Prompt Driven Development (PDD)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../ux_design/readme/" class="md-footer__link md-footer__link--next" aria-label="Next: UX Design by Prompting">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                UX Design by Prompting
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Panaversity. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/panaversity/" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/panaversity/?igsh=cmljY3A2bmcyNzl3#" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCV1ZbnHzA7FwG7XXYYzE84w" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/panaversity/posts/?feedView=all" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2620 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/03_prompt_engineering/video_generation/readme/">
+      
+      
+        <link rel="prev" href="../../ux_design/uxpilot_workflow_tutorial/">
+      
+      
+        <link rel="next" href="../../../04_no_code_agents/applied_self_learning/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Video Generation Tutorial for Google Veo 3 - Learn Agentic AI from Low Code to Code - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#video-generation-tutorial-for-google-veo-3" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-header__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Agentic AI from Low Code to Code - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Video Generation Tutorial for Google Veo 3
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-nav__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Agentic AI from Low Code to Code - Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learn Agentic AI: From Low-Code to Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00 agentic web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            00 agentic web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/implications_for_stakeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3: Implications for Stakeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/panaversity-openai-vision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Vision for an AI-Driven Future Learning Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../00_agentic_web/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Blueprint to Power the Future Web with AI - Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 agentic org
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            01 agentic org
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/agentic_org_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Learning Guide to the Future of Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/graduate_level_quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Graduate Level Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCQ Quiz: The Agentic Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../01_agentic_org/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Rise of Agentic Organizations: How AI Is Redefining the Future of Work and Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 ai and human readiness
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            02 ai and human readiness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/ai_transformation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating AI Transformation: A Strategic Guide for Beginners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI and Human Readiness in IT: Graduate-Level Assessment Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02_ai_and_human_readiness/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating the Crossroads of AI and Human Readiness in IT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 prompt engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            03 prompt engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../context_engineering_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Guide to Context Engineering for AI Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../six_part_prompting_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Image generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Image generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../image_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Tutorial for Nano Banana
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prompt driven development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Prompt driven development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prompt_driven_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Driven Development (PDD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ui development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ui development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI Development by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ux design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ux design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ux_design/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UX Design by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ux_design/uxpilot_workflow_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Video generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Video generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Video Generation Tutorial for Google Veo 3
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Video Generation Tutorial for Google Veo 3
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cinematic-specificity-over-generic-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Cinematic Specificity Over Generic Descriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-narrative-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Narrative Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-professional-film-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Professional Film Language
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-effective-veo-3-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of Effective Veo 3 Prompts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-corporate-brand-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 1: Corporate Brand Video
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-cinematic-character-portrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 2: Cinematic Character Portrait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-product-showcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 3: Product Showcase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-educational-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 4: Educational Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-5-lifestylesocial-media-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 5: Lifestyle/Social Media Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-6-creativeartistic-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 6: Creative/Artistic Vision
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04 no code agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            04 no code agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/applied_self_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applied Self-Learning Guide — What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/class_handson_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Project: Assignments Grading and Feedback Agentic System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/pre-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Setup Guide: Getting Ready for Week 2 Session 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../04_no_code_agents/what_is_an_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents VS Chatbots - Student's Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05 knowledge connections
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            05 knowledge connections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/01_file_search_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 1: File Search with Vector Stores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/02_connectors_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 2: Connectors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/03_mcp_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 3: MCP Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/04_mcp_nodes_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4: MCP Nodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../05_knowledge_connections/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 5: Connecting Knowledge Safely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06 visual patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            06 visual patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06_visual_patterns/lab_agentic_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab: Customer Support System Using All 4 Agentic Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../06_visual_patterns/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 6: Visual and Agentic Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    07 deploy chatkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            07 deploy chatkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../07_deploy_chatkit/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 7: Deploy with ChatKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Assignments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/01_agentic_ai_usecase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment: Find One Real Agentic AI Use Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teacher guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teacher guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_feedback_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    💬 Standard Feedback Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_grading_criteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧮 Grading Rubric — “Find One Real Agentic AI Use Case”
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/teacher_guidelines/01_sample_eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧾 Example Teacher Evaluation (Sample)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#core-principles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Principles
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core Principles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-cinematic-specificity-over-generic-descriptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Cinematic Specificity Over Generic Descriptions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-narrative-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Narrative Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-professional-film-language" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Professional Film Language
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anatomy-of-effective-veo-3-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anatomy of Effective Veo 3 Prompts
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-1-corporate-brand-video" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 1: Corporate Brand Video
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-2-cinematic-character-portrait" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 2: Cinematic Character Portrait
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3-product-showcase" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 3: Product Showcase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-4-educational-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 4: Educational Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-5-lifestylesocial-media-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 5: Lifestyle/Social Media Content
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-6-creativeartistic-vision" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎬 Example 6: Creative/Artistic Vision
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="video-generation-tutorial-for-google-veo-3">Video Generation Tutorial for Google Veo 3</h1>
+<p><em>By Example – with Real Prompts</em></p>
+<p>Access at https://gemini.google/overview/video-generation/ or via <a href="https://aistudio.google.com/prompts/new_chat">Gemini AI Studio</a></p>
+<p>Google Veo 3 (like Runway ML, Pika Labs, or Stable Video Diffusion) responds to highly descriptive, cinematic prompts. The more structured, visual, and contextual your input, the closer the output matches your creative vision. Veo 3 delivers best-in-class quality, excelling in physics, realism, and prompt adherence, while also generating synchronized audio including sound effects, ambient noise, and dialogue natively.</p>
+<p>Note: This is bonus material, due to high cost of the model <strong>this tutor in not covered in the Panaversity Certification Exams</strong>:</p>
+<p>https://docs.google.com/document/d/1BygAckkfc_NFQnTfEM6qqUvPdlIHpNItmRtvfRMGp38/edit?usp=sharing</p>
+<hr />
+<h2 id="core-principles">Core Principles</h2>
+<h3 id="1-cinematic-specificity-over-generic-descriptions">1. <strong>Cinematic Specificity Over Generic Descriptions</strong></h3>
+<ul>
+<li>Vague: "a person walking"</li>
+<li>Better: "Medium shot of a woman in flowing red dress walking through misty forest at golden hour, camera tracking left to right"</li>
+</ul>
+<h3 id="2-narrative-structure">2. <strong>Narrative Structure</strong></h3>
+<ul>
+<li>Start with camera movement/angle</li>
+<li>Define the subject and action</li>
+<li>Add environment and atmosphere</li>
+<li>Specify audio elements</li>
+<li>Include technical cinematography details</li>
+</ul>
+<h3 id="3-professional-film-language">3. <strong>Professional Film Language</strong></h3>
+<ul>
+<li>Use camera terminology (close-up, wide shot, tracking shot, dolly zoom)</li>
+<li>Reference lighting setups (key lighting, rim lighting, natural window light)</li>
+<li>Mention film styles (cinematic, documentary, noir, vintage film grain)</li>
+</ul>
+<h2 id="anatomy-of-effective-veo-3-prompts">Anatomy of Effective Veo 3 Prompts</h2>
+<p>A well-structured prompt typically includes:
+1. <strong>Camera Movement/Angle</strong> (establishing the shot)
+2. <strong>Subject Description</strong> (who/what is in frame)
+3. <strong>Action/Movement</strong> (what's happening)
+4. <strong>Environment/Setting</strong> (where it takes place)
+5. <strong>Lighting/Atmosphere</strong> (mood and visual tone)
+6. <strong>Audio Elements</strong> (dialogue, sound effects, ambient)
+7. <strong>Technical Style</strong> (film format, color grading)
+8. <strong>Duration Pacing</strong> (how action unfolds over time)</p>
+<hr />
+<h2 id="example-1-corporate-brand-video">🎬 Example 1: Corporate Brand Video</h2>
+<p><strong>Prompt Used:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Wide establishing shot slowly pushing in to medium close-up of a confident business professional in a modern glass office. Subject walks purposefully toward floor-to-ceiling windows overlooking a city skyline. Wearing sharp navy suit, hands clasped behind back, slight head turn toward camera with determined expression. Golden hour lighting streams through windows creating dramatic rim lighting. Ambient sound of distant city traffic, subtle footsteps on polished floor. "This is where innovation begins," spoken with conviction. Cinematic color grading with warm highlights and cool shadows. Shot on RED camera with shallow depth of field.
+</div>
+
+<p><strong>Generated Video Characteristics:</strong>
+- 8-second duration with smooth camera movement
+- Professional lighting with realistic physics
+- Synchronized lip movement with dialogue
+- Environmental audio layers (city ambiance + footsteps)</p>
+<p>✅ <strong>What Worked Here</strong></p>
+<ul>
+<li><strong>Camera direction</strong>: "Wide establishing shot slowly pushing in" creates professional movement.</li>
+<li><strong>Subject grounding</strong>: Specific wardrobe and positioning details ensure consistency.</li>
+<li><strong>Environmental storytelling</strong>: Office setting + skyline = corporate success narrative.</li>
+<li><strong>Audio layering</strong>: Dialogue + ambient sound + foley effects = immersive experience.</li>
+</ul>
+<p>💡 <strong>Takeaway Rule:</strong> <em>For corporate videos, combine camera movement + professional setting + confident subject + layered audio for maximum impact.</em></p>
+<hr />
+<h2 id="example-2-cinematic-character-portrait">🎬 Example 2: Cinematic Character Portrait</h2>
+<p><strong>Prompt Used:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Extreme close-up of weathered hands lighting a cigarette in dim noir lighting. Camera slowly pulls back to reveal a mysterious figure in a fedora sitting in a shadowy alley. Rain glistens on wet cobblestones, neon signs reflecting in puddles. The figure takes a slow drag, exhales smoke that drifts across frame. Sound of distant rain pattering, match striking, deep exhale. No dialogue, just atmospheric tension. Black and white with high contrast, film noir aesthetic. Shot on 35mm film with natural grain texture.
+</div>
+
+<p><strong>Style Elements:</strong>
+- Noir cinematography with dramatic shadows
+- Environmental storytelling through setting
+- Atmospheric audio design
+- Classic film emulation with grain</p>
+<p>✅ <strong>What Worked Here</strong></p>
+<ul>
+<li><strong>Progressive reveal</strong>: Starting with hands, then revealing character creates intrigue.</li>
+<li><strong>Atmospheric audio</strong>: Rain + match + exhale builds immersive soundscape.</li>
+<li><strong>Visual style consistency</strong>: Film noir aesthetic maintained throughout.</li>
+<li><strong>Pacing control</strong>: Slow, deliberate movements match the moody tone.</li>
+</ul>
+<p>💡 <strong>Takeaway Rule:</strong> <em>For artistic videos, layer environmental details + atmospheric audio + consistent visual style for compelling storytelling.</em></p>
+<hr />
+<h2 id="example-3-product-showcase">🎬 Example 3: Product Showcase</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Macro lens extreme close-up of sleek smartphone rotating slowly on white seamless background. Camera orbits the device revealing premium materials and precise engineering details. Soft studio lighting with subtle reflections on glass screen. Clean, minimal aesthetic with shallow depth of field. Subtle electronic music building gradually. No dialogue, focus on visual elegance. Color grading emphasizes cool blues and warm metallic tones. Shot with high-end macro lens, crystal clear detail.
+</div>
+
+<p>✅ <strong>Why This Works:</strong>
+Creates premium product presentation with professional studio quality and synchronized music.</p>
+<hr />
+<h2 id="example-4-educational-content">🎬 Example 4: Educational Content</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Medium shot of enthusiastic teacher at whiteboard explaining complex diagram with animated gestures. Camera holds steady as teacher moves naturally within frame. Modern classroom with soft natural lighting from large windows. "The key concept here is understanding the relationship between these elements," spoken with clarity and passion. Background ambient sound of classroom atmosphere. Clean, documentary style with accurate color reproduction. Educational content aesthetic with clear audio.
+</div>
+
+<p>💡 <strong>Use Case:</strong> Perfect for online courses, tutorials, or educational marketing content.</p>
+<hr />
+<h2 id="example-5-lifestylesocial-media-content">🎬 Example 5: Lifestyle/Social Media Content</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Handheld camera following young woman as she walks through vibrant farmers market. Natural documentary style with organic camera movement. Subject samples fresh fruit, smiles authentically at camera. Golden hour lighting with natural shadows. Market ambient sounds: conversations, vendors calling, footsteps on pavement. "This is my favorite weekend ritual," spoken casually to camera. Warm color grading with slight film emulation. Mobile-friendly vertical composition option.
+</div>
+
+<p>💡 <strong>Use Case:</strong> Social media content, lifestyle branding, authentic marketing materials.</p>
+<hr />
+<h2 id="example-6-creativeartistic-vision">🎬 Example 6: Creative/Artistic Vision</h2>
+<p><strong>Prompt:</strong></p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Surreal slow-motion sequence of paint splattering in mid-air against pure black background. Multiple colors colliding and mixing in impossible physics-defying ways. Camera rotates 360 degrees around the action. Dramatic studio lighting creates paint drops that shimmer like liquid metal. Abstract electronic soundscape with whoosh effects synchronized to paint movements. No dialogue, purely visual and auditory art piece. High contrast color grading with saturated primaries.
+</div>
+
+<p>💡 <strong>Use Case:</strong> Art installations, creative portfolios, experimental marketing campaigns.</p>
+<hr />
+<h1 id="best-practices-for-prompt-engineering-in-veo-3">🎯 Best Practices for Prompt Engineering in Veo 3</h1>
+<h2 id="1-structure-your-narrative">1. <strong>Structure Your Narrative</strong></h2>
+<p>Aim for a balanced range of roughly 3–6 sentences, or 100–150 words. This gives you room to describe the subject, context, action, and style, with optional space for camera, ambiance, or sound.</p>
+<h2 id="2-layer-your-audio-design">2. <strong>Layer Your Audio Design</strong></h2>
+<p>With Veo 3, you can provide cues for sound effects, ambient noise, and dialogue. Use quotes for specific speech and explicitly describe sound effects.</p>
+<ul>
+<li><strong>Dialogue</strong>: Use quotation marks for specific speech</li>
+<li><strong>Sound Effects</strong>: Explicitly describe (footsteps, door closing, wind)  </li>
+<li><strong>Ambient Audio</strong>: Environmental sounds (city traffic, ocean waves, forest sounds)</li>
+<li><strong>Music</strong>: Background music style and mood</li>
+</ul>
+<h2 id="3-control-camera-movement">3. <strong>Control Camera Movement</strong></h2>
+<ul>
+<li><strong>Static shots</strong>: "Camera holds steady," "Fixed frame"</li>
+<li><strong>Movement</strong>: "Slow push in," "Camera pulls back," "Tracking shot left to right"</li>
+<li><strong>Handheld</strong>: "Handheld documentary style," "Organic camera movement"</li>
+<li><strong>Cinematic</strong>: "Smooth dolly movement," "Crane shot descending"</li>
+</ul>
+<h2 id="4-specify-visual-style">4. <strong>Specify Visual Style</strong></h2>
+<ul>
+<li><strong>Lighting</strong>: Natural window light, golden hour, studio lighting, noir shadows</li>
+<li><strong>Color</strong>: Warm/cool tones, high contrast, desaturated, vintage film look</li>
+<li><strong>Format</strong>: 35mm film grain, digital cinema, mobile vertical, documentary style</li>
+</ul>
+<h2 id="5-plan-for-8-second-duration">5. <strong>Plan for 8-Second Duration</strong></h2>
+<p>Understanding the model's current limitations like the 8-second clip length are essential for efficient workflow. Think carefully about your prompts and generate only one output at a time, as each generation takes 2-3 minutes or more.</p>
+<ul>
+<li><strong>Single action/movement</strong> works best</li>
+<li><strong>Avoid complex scene changes</strong> within one clip</li>
+<li><strong>Focus on one key moment</strong> rather than full narratives</li>
+</ul>
+<hr />
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<h3 id="1-sequential-storytelling">1. <strong>Sequential Storytelling</strong></h3>
+<p>Veo3 works well with 'this then that'. You can direct a chain of different emotions or physical actions within a single prompt, allowing for complex emotional arcs in a short time.</p>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Subject starts looking down pensively, then slowly lifts head with growing confidence, finally smiling directly at camera with determination.
+</div>
+
+<h3 id="2-cinematic-camera-language">2. <strong>Cinematic Camera Language</strong></h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Opening: Wide establishing shot of location
+Middle: Medium shot showing character interaction  
+Close: Extreme close-up revealing emotional detail
+Movement: Smooth dolly push-in for intensity
+</div>
+
+<h3 id="3-professional-lighting-setups">3. <strong>Professional Lighting Setups</strong></h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Key light: Main illumination from camera left
+Fill light: Soft bounce light reducing harsh shadows
+Rim light: Backlight creating subject separation
+Practical lights: In-scene light sources (lamps, windows, neon)
+</div>
+
+<h3 id="4-audio-visual-synchronization">4. <strong>Audio-Visual Synchronization</strong></h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+Visual: Character's mouth opens in surprise
+Audio: Sharp intake of breath, background music swells
+SFX: Door slamming in distance
+Dialogue: "I can't believe this is happening"
+</div>
+
+<h2 id="style-categories-templates">Style Categories &amp; Templates</h2>
+<h3 id="corporateprofessional">Corporate/Professional</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+[CAMERA ANGLE] of [PROFESSIONAL SUBJECT] in [MODERN ENVIRONMENT]. [CONFIDENT ACTION/POSE] while [RELEVANT ACTIVITY]. [PROFESSIONAL LIGHTING] creates [MOOD]. [CORPORATE AUDIO: ambient office sounds, confident dialogue]. [CLEAN VISUAL STYLE]. Shot with [PROFESSIONAL CAMERA SPECS].
+</div>
+
+<h3 id="cinematicnarrative">Cinematic/Narrative</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+[DRAMATIC CAMERA MOVEMENT] reveals [CHARACTER] in [ATMOSPHERIC LOCATION]. [EMOTIONAL ACTION] as [ENVIRONMENTAL DETAILS] enhance the mood. [CINEMATIC LIGHTING] with [SHADOW/HIGHLIGHT EFFECTS]. [LAYERED AUDIO: dialogue, ambient, music]. [FILM STYLE] with [COLOR GRADING]. [TECHNICAL CAMERA SPECS].
+</div>
+
+<h3 id="documentaryeducational">Documentary/Educational</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+[NATURAL CAMERA WORK] captures [SUBJECT] engaged in [AUTHENTIC ACTIVITY]. [EDUCATIONAL DIALOGUE] delivered naturally. [NATURAL LIGHTING] in [REAL ENVIRONMENT]. [DOCUMENTARY AUDIO: clear speech, ambient sound]. [REALISTIC STYLE] with [NATURAL COLOR GRADING].
+</div>
+
+<h3 id="creativeartistic">Creative/Artistic</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+[EXPERIMENTAL CAMERA TECHNIQUE] showcasing [CREATIVE SUBJECT] in [SURREAL/ARTISTIC ENVIRONMENT]. [ABSTRACT MOVEMENT/ACTION] with [IMPOSSIBLE PHYSICS]. [DRAMATIC LIGHTING EFFECTS]. [ARTISTIC AUDIO: abstract soundscape, experimental music]. [STYLIZED VISUAL TREATMENT] with [CREATIVE COLOR/EFFECTS].
+</div>
+
+<h3 id="social-medialifestyle">Social Media/Lifestyle</h3>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+[MOBILE-FRIENDLY CAMERA ANGLE] following [RELATABLE SUBJECT] through [EVERYDAY ENVIRONMENT]. [AUTHENTIC INTERACTION/ACTIVITY] with [GENUINE EMOTION]. [NATURAL LIGHTING]. [CASUAL DIALOGUE] and [AMBIENT SOUNDS]. [SOCIAL MEDIA AESTHETIC] optimized for [PLATFORM REQUIREMENTS].
+</div>
+
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<h3 id="too-complex-for-8-seconds">❌ Too Complex for 8 Seconds</h3>
+<p><strong>Bad:</strong> "Character walks through forest, finds treasure, fights monster, celebrates victory"
+<strong>Good:</strong> "Character discovers glowing treasure chest in misty forest, face illuminated with wonder"</p>
+<h3 id="conflicting-audio-elements">❌ Conflicting Audio Elements</h3>
+<p><strong>Bad:</strong> "Quiet intimate dialogue with loud rock music and thunderstorm"<br />
+<strong>Good:</strong> "Soft whispered dialogue with gentle rain and subtle emotional music"</p>
+<h3 id="vague-camera-direction">❌ Vague Camera Direction</h3>
+<p><strong>Bad:</strong> "Nice camera work showing the scene"
+<strong>Good:</strong> "Slow push-in from wide shot to medium close-up, camera slightly low angle"</p>
+<h3 id="generic-visual-style">❌ Generic Visual Style</h3>
+<p><strong>Bad:</strong> "Make it look good"
+<strong>Good:</strong> "Cinematic color grading with warm highlights, cool shadows, shot on 35mm film"</p>
+<h2 id="quality-control-checklist">Quality Control Checklist</h2>
+<p>Before submitting your prompt, verify:
+- [ ] Camera movement/angle is clearly specified
+- [ ] Subject and action fit within 8-second timeframe<br />
+- [ ] Audio elements are layered appropriately
+- [ ] Visual style is consistent and specific
+- [ ] Lighting direction and mood are described
+- [ ] Technical specifications enhance the vision
+- [ ] No conflicting elements or impossible physics
+- [ ] Dialogue is in quotation marks
+- [ ] Sound effects are explicitly described</p>
+<h2 id="advanced-prompt-structure-template">Advanced Prompt Structure Template</h2>
+<div style="width: 200px; border: 1px solid black; padding: 10px;">
+[CAMERA MOVEMENT/ANGLE]: [Specific camera direction and framing]
+[SUBJECT]: [Detailed character/object description]  
+[ACTION]: [What happens within 8 seconds]
+[ENVIRONMENT]: [Setting and atmospheric details]
+[LIGHTING]: [Type, direction, and mood of lighting]
+[AUDIO LAYERS]: 
+  - Dialogue: "[Exact spoken words]"
+  - SFX: [Specific sound effects]  
+  - Ambient: [Environmental sounds]
+  - Music: [Background music style]
+[VISUAL STYLE]: [Overall aesthetic and color treatment]
+[TECHNICAL]: [Camera specs and film format if relevant]
+</div>
+
+<h2 id="conclusion">Conclusion</h2>
+<p>Effective prompt engineering for Google Veo 3 combines cinematic storytelling with technical precision. Use evocative, sensory language to paint a picture of your imaginary world, thinking about light, texture, and atmosphere. By following these principles and studying the examples provided, you'll be able to consistently generate professional-quality videos that meet your specific creative requirements.</p>
+<p>Remember: Veo 3's strength lies in its ability to generate synchronized audio alongside stunning visuals. Leverage this capability by carefully crafting your audio elements alongside your visual descriptions. The more specific and well-structured your prompts, the better your results will be.</p>
+<p>Practice with these templates, adapt them to your needs, and develop your own style of video prompt engineering. The key is balancing cinematic vision with technical clarity while working within the 8-second duration constraint.</p>
+<h1 id="appendix-a-professional-video-production-language-reference">Appendix A: Professional Video Production Language Reference</h1>
+<p><em>A Comprehensive Guide to Cinematography Terminology for AI Video Generation</em></p>
+<h2 id="camera-movements-angles">Camera Movements &amp; Angles</h2>
+<h3 id="basic-camera-angles">Basic Camera Angles</h3>
+<ul>
+<li><strong>Wide Shot (WS)</strong>: Shows full subject and environment</li>
+<li><strong>Medium Shot (MS)</strong>: Shows subject from waist up  </li>
+<li><strong>Close-up (CU)</strong>: Shows head and shoulders</li>
+<li><strong>Extreme Close-up (ECU)</strong>: Shows specific detail (eyes, hands)</li>
+<li><strong>Over-the-shoulder</strong>: Camera positioned behind one subject looking at another</li>
+</ul>
+<h3 id="camera-movements">Camera Movements</h3>
+<ul>
+<li><strong>Push In/Push Out</strong>: Camera moves toward or away from subject</li>
+<li><strong>Tracking Shot</strong>: Camera follows subject horizontally</li>
+<li><strong>Dolly</strong>: Smooth camera movement on wheels or tracks</li>
+<li><strong>Handheld</strong>: Natural, organic camera movement</li>
+<li><strong>Crane Shot</strong>: High angle moving vertically</li>
+<li><strong>Orbit/360</strong>: Camera circles around subject</li>
+</ul>
+<h3 id="advanced-techniques_1">Advanced Techniques</h3>
+<ul>
+<li><strong>Dolly Zoom</strong>: Camera moves while zooming (Vertigo effect)</li>
+<li><strong>Whip Pan</strong>: Fast horizontal camera movement</li>
+<li><strong>Tilt Up/Down</strong>: Camera pivots vertically</li>
+<li><strong>Dutch Angle</strong>: Tilted camera for dramatic effect</li>
+</ul>
+<h2 id="lighting-terminology">Lighting Terminology</h2>
+<h3 id="lighting-setups">Lighting Setups</h3>
+<ul>
+<li><strong>Key Light</strong>: Primary light source</li>
+<li><strong>Fill Light</strong>: Secondary light to reduce shadows</li>
+<li><strong>Rim/Back Light</strong>: Light from behind subject</li>
+<li><strong>Practical Light</strong>: Light sources within the scene</li>
+</ul>
+<h3 id="lighting-quality">Lighting Quality</h3>
+<ul>
+<li><strong>Hard Light</strong>: Creates sharp shadows</li>
+<li><strong>Soft Light</strong>: Diffused, even illumination  </li>
+<li><strong>Natural Light</strong>: Window light, outdoor lighting</li>
+<li><strong>Golden Hour</strong>: Warm, soft sunlight at sunrise/sunset</li>
+<li><strong>Blue Hour</strong>: Cool, even light after sunset</li>
+</ul>
+<h3 id="lighting-moods">Lighting Moods</h3>
+<ul>
+<li><strong>High Key</strong>: Bright, even lighting</li>
+<li><strong>Low Key</strong>: Dramatic shadows and contrasts</li>
+<li><strong>Noir</strong>: High contrast black and white aesthetic</li>
+<li><strong>Cinematic</strong>: Professional film lighting</li>
+</ul>
+<h2 id="audio-design-elements">Audio Design Elements</h2>
+<h3 id="dialogue">Dialogue</h3>
+<ul>
+<li><strong>On-camera dialogue</strong>: Character speaking to camera</li>
+<li><strong>Voice-over</strong>: Narration over visuals</li>
+<li><strong>Conversational</strong>: Natural dialogue between characters</li>
+<li><strong>Monologue</strong>: Single character speaking</li>
+</ul>
+<h3 id="sound-effects-sfx">Sound Effects (SFX)</h3>
+<ul>
+<li><strong>Foley</strong>: Everyday sounds (footsteps, doors, objects)</li>
+<li><strong>Hard SFX</strong>: Specific sound effects (explosions, crashes)</li>
+<li><strong>Ambient SFX</strong>: Environmental sounds integrated naturally</li>
+</ul>
+<h3 id="ambient-audio">Ambient Audio</h3>
+<ul>
+<li><strong>Room tone</strong>: Natural sound of environment</li>
+<li><strong>Atmospheric</strong>: Weather, location-specific sounds</li>
+<li><strong>Urban</strong>: City traffic, people, construction</li>
+<li><strong>Natural</strong>: Birds, wind, water, forest sounds</li>
+</ul>
+<h3 id="music">Music</h3>
+<ul>
+<li><strong>Score</strong>: Composed music for emotional effect</li>
+<li><strong>Source Music</strong>: Music playing within the scene</li>
+<li><strong>Underscore</strong>: Subtle background music</li>
+<li><strong>Crescendo</strong>: Building musical intensity</li>
+</ul>
+<h2 id="visual-styles-aesthetics">Visual Styles &amp; Aesthetics</h2>
+<h3 id="film-formats">Film Formats</h3>
+<ul>
+<li><strong>35mm Film</strong>: Classic film look with grain</li>
+<li><strong>Digital Cinema</strong>: Clean, high-resolution look</li>
+<li><strong>16mm Film</strong>: Grainier, documentary aesthetic</li>
+<li><strong>Super 8</strong>: Vintage home movie feel</li>
+</ul>
+<h3 id="color-grading">Color Grading</h3>
+<ul>
+<li><strong>Warm Tones</strong>: Orange/yellow color palette</li>
+<li><strong>Cool Tones</strong>: Blue/teal color palette  </li>
+<li><strong>Desaturated</strong>: Muted, low-saturation colors</li>
+<li><strong>High Contrast</strong>: Strong difference between lights and darks</li>
+<li><strong>Vintage</strong>: Retro color treatment</li>
+<li><strong>Teal and Orange</strong>: Popular modern color scheme</li>
+</ul>
+<h3 id="production-styles">Production Styles</h3>
+<ul>
+<li><strong>Documentary</strong>: Realistic, handheld, natural lighting</li>
+<li><strong>Cinematic</strong>: High production value, composed shots</li>
+<li><strong>Corporate</strong>: Clean, professional, well-lit</li>
+<li><strong>Indie Film</strong>: Creative, artistic, lower budget aesthetic</li>
+<li><strong>Commercial</strong>: Polished, marketing-focused</li>
+<li><strong>Social Media</strong>: Mobile-optimized, engaging, authentic</li>
+</ul>
+<h2 id="composition-techniques">Composition Techniques</h2>
+<h3 id="framing-rules">Framing Rules</h3>
+<ul>
+<li><strong>Rule of Thirds</strong>: Subject positioned at intersection points</li>
+<li><strong>Leading Lines</strong>: Lines that draw eye to subject</li>
+<li><strong>Symmetry</strong>: Balanced, centered composition</li>
+<li><strong>Depth of Field</strong>: Selective focus to isolate subject</li>
+<li><strong>Negative Space</strong>: Empty areas for visual breathing room</li>
+</ul>
+<h3 id="shot-composition">Shot Composition</h3>
+<ul>
+<li><strong>Headroom</strong>: Space above subject's head in frame</li>
+<li><strong>Lead Room</strong>: Space in direction subject is moving/looking</li>
+<li><strong>Aspect Ratio</strong>: 16:9 widescreen, 9:16 vertical, 1:1 square</li>
+<li><strong>Safe Areas</strong>: Ensuring important elements stay in frame</li>
+</ul>
+<p>This appendix serves as a reference for understanding and effectively using professional video production terminology in Veo 3 prompts for optimal results.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../ux_design/uxpilot_workflow_tutorial/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../04_no_code_agents/applied_self_learning/" class="md-footer__link md-footer__link--next" aria-label="Next: Applied Self-Learning Guide — What Is an Agent (No Code)?">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Applied Self-Learning Guide — What Is an Agent (No Code)?
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Panaversity. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/panaversity/" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/panaversity/?igsh=cmljY3A2bmcyNzl3#" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCV1ZbnHzA7FwG7XXYYzE84w" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/panaversity/posts/?feedView=all" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.footer"], "search": "../../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

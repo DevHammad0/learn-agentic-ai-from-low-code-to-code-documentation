@@ -1,0 +1,4534 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/03_prompt_engineering/readme/">
+      
+      
+        <link rel="prev" href="../context_engineering_tutorial/">
+      
+      
+        <link rel="next" href="../six_part_prompting_framework/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication - Learn Agentic AI from Low Code to Code - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#prompt-and-context-engineering-tutorial-for-beginners-a-comprehensive-guide-to-effective-ai-communication" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-header__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Agentic AI from Low Code to Code - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-nav__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Agentic AI from Low Code to Code - Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learn Agentic AI: From Low-Code to Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00 agentic web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            00 agentic web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/implications_for_stakeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3: Implications for Stakeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/panaversity-openai-vision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Vision for an AI-Driven Future Learning Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Blueprint to Power the Future Web with AI - Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 agentic org
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            01 agentic org
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/agentic_org_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Learning Guide to the Future of Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/graduate_level_quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Graduate Level Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCQ Quiz: The Agentic Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Rise of Agentic Organizations: How AI Is Redefining the Future of Work and Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 ai and human readiness
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            02 ai and human readiness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_ai_and_human_readiness/ai_transformation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating AI Transformation: A Strategic Guide for Beginners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_ai_and_human_readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI and Human Readiness in IT: Graduate-Level Assessment Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_ai_and_human_readiness/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating the Crossroads of AI and Human Readiness in IT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 prompt engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            03 prompt engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context_engineering_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Guide to Context Engineering for AI Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-llm-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How LLM Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-power-of-prompts-context-engineering-for-agentic-ai-developers-image-and-video-generation-uxui-design-and-ui-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the Power of Prompts: Context Engineering for Agentic AI Developers, Image and Video Generation, UX/UI Design and UI Development
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-is-the-best-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which is the best LLM?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-these-prompt-engineering-tools-to-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use these Prompt Engineering Tools to Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-coach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Coach"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Prompt Engineering?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-engineering-vs-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt engineering vs. context engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt engineering vs. context engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick contrast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-they-work-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      How they work together
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concrete examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-large-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Large Language Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Large Language Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-llms-work-the-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      How LLMs Work (The Basics)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concept-autocompletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concept: Autocompletion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Configuration Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential Configuration Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature (0-1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-lengthtoken-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Length/Token Limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-k-and-top-p-nucleus-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top-K and Top-P (Nucleus Sampling)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamental-prompting-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamental Prompting Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamental Prompting Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-zero-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Zero-Shot Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-one-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. One-Shot Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-few-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Few-Shot Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-system-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. System Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-role-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Role Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-contextual-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Contextual Prompting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-prompting-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Prompting Strategies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Prompting Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chain-of-thought-cot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chain of Thought (CoT) Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-Consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-back-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-Back Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-reasoning-acting" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReAct (Reasoning + Acting)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree-of-thoughts-tot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tree of Thoughts (ToT)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-effective-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Effective Prompts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices for Effective Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-be-specific-and-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Be Specific and Clear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-action-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Use Action Verbs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-provide-examples-when-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Provide Examples When Possible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-structure-your-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Structure Your Prompts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-use-instructions-over-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Use Instructions Over Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-control-output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Control Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-use-variables-for-reusability" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Use Variables for Reusability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-iterate-and-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Iterate and Document
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls-and-how-to-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Pitfalls and How to Avoid Them
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Pitfalls and How to Avoid Them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ambiguous-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ambiguous Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-contradictory-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Contradictory Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-too-many-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Too Many Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ignoring-token-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ignoring Token Limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-not-testing-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Not Testing Variations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hands-On Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hands-On Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-content-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Content Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Data Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Iteration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing and Iteration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-testing-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create a Testing Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ab-test-different-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. A/B Test Different Approaches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-evaluate-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Evaluate Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-common-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Common Evaluation Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-tips-for-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Tips for 2025
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Tips for 2025">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-leverage-structured-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Leverage Structured Outputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-context-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Context Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-multi-modal-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Multi-Modal Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prompt-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Prompt Chaining
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-and-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources and Next Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources and Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools and Platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-prompt-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a Prompt Library
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixture-of-experts-moe-and-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixture-of-Experts (MoE) and Prompt Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mixture-of-Experts (MoE) and Prompt Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moe-implementation-status-in-frontier-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      MoE Implementation Status in Frontier Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components-of-moe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components of MoE:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-moe-works-in-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      How MoE Works in LLMs:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-moe-change-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Does MoE Change Prompt Engineering?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Does MoE Change Prompt Engineering?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-need-for-expert-aware-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Need for Expert-Aware Prompting:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enhanced-chain-of-thought-cot-and-multi-step-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enhanced Chain-of-Thought (CoT) and Multi-Step Reasoning:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-handling-sparsity-and-variability" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Handling Sparsity and Variability:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-efficiency-in-prompt-length-and-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Efficiency in Prompt Length and Complexity:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-broader-implications-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Broader Implications and Best Practices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-wording-changes-can-steer-which-experts-wake-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small wording changes can steer which experts wake up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-more-of-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do more of this
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-less-of-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do less of this
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-routing-friendly-prompt-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      A routing-friendly prompt skeleton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-with-moe-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting with MoE models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-6-part-prompting-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 6-Part Prompting Framework
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../six_part_prompting_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Image generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Image generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Tutorial for Nano Banana
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prompt driven development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Prompt driven development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prompt_driven_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Driven Development (PDD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ui development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ui development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI Development by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ux design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ux design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ux_design/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UX Design by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ux_design/uxpilot_workflow_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Video generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Video generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Video Generation Tutorial for Google Veo 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04 no code agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            04 no code agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_no_code_agents/applied_self_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applied Self-Learning Guide — What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_no_code_agents/class_handson_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Project: Assignments Grading and Feedback Agentic System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_no_code_agents/pre-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Setup Guide: Getting Ready for Week 2 Session 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_no_code_agents/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04_no_code_agents/what_is_an_agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents VS Chatbots - Student's Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05 knowledge connections
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            05 knowledge connections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/01_file_search_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 1: File Search with Vector Stores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/02_connectors_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 2: Connectors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/03_mcp_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 3: MCP Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/04_mcp_nodes_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4: MCP Nodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 5: Connecting Knowledge Safely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06 visual patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            06 visual patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_visual_patterns/lab_agentic_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab: Customer Support System Using All 4 Agentic Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_visual_patterns/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 6: Visual and Agentic Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    07 deploy chatkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            07 deploy chatkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_deploy_chatkit/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 7: Deploy with ChatKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Assignments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/01_agentic_ai_usecase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment: Find One Real Agentic AI Use Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teacher guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teacher guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/teacher_guidelines/01_feedback_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    💬 Standard Feedback Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/teacher_guidelines/01_grading_criteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧮 Grading Rubric — “Find One Real Agentic AI Use Case”
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/teacher_guidelines/01_sample_eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧾 Example Teacher Evaluation (Sample)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-llm-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      How LLM Works
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understand-the-power-of-prompts-context-engineering-for-agentic-ai-developers-image-and-video-generation-uxui-design-and-ui-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understand the Power of Prompts: Context Engineering for Agentic AI Developers, Image and Video Generation, UX/UI Design and UI Development
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#which-is-the-best-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Which is the best LLM?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-these-prompt-engineering-tools-to-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use these Prompt Engineering Tools to Learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-coach" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt Coach"
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Prompt Engineering?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt-engineering-vs-context-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prompt engineering vs. context engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prompt engineering vs. context engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-contrast" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quick contrast
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-they-work-together" class="md-nav__link">
+    <span class="md-ellipsis">
+      How they work together
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concrete-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Concrete examples
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practical-tips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practical tips
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-large-language-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Large Language Models
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Understanding Large Language Models">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-llms-work-the-basics" class="md-nav__link">
+    <span class="md-ellipsis">
+      How LLMs Work (The Basics)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-concept-autocompletion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Concept: Autocompletion
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#essential-configuration-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Essential Configuration Settings
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Essential Configuration Settings">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#temperature-0-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temperature (0-1)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-lengthtoken-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Output Length/Token Limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#top-k-and-top-p-nucleus-sampling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top-K and Top-P (Nucleus Sampling)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fundamental-prompting-techniques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fundamental Prompting Techniques
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fundamental Prompting Techniques">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-zero-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Zero-Shot Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-one-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. One-Shot Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-few-shot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Few-Shot Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-system-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. System Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-role-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Role Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-contextual-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Contextual Prompting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-prompting-strategies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Prompting Strategies
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Prompting Strategies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chain-of-thought-cot-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chain of Thought (CoT) Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-consistency" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-Consistency
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-back-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step-Back Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-reasoning-acting" class="md-nav__link">
+    <span class="md-ellipsis">
+      ReAct (Reasoning + Acting)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tree-of-thoughts-tot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tree of Thoughts (ToT)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices-for-effective-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices for Effective Prompts
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Best Practices for Effective Prompts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-be-specific-and-clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Be Specific and Clear
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-use-action-verbs" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Use Action Verbs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-provide-examples-when-possible" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Provide Examples When Possible
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-structure-your-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Structure Your Prompts
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-use-instructions-over-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Use Instructions Over Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-control-output-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Control Output Format
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-use-variables-for-reusability" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Use Variables for Reusability
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-iterate-and-document" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Iterate and Document
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-pitfalls-and-how-to-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Pitfalls and How to Avoid Them
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Pitfalls and How to Avoid Them">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-ambiguous-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Ambiguous Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-contradictory-instructions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Contradictory Instructions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-too-many-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Too Many Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-ignoring-token-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Ignoring Token Limits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-not-testing-variations" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Not Testing Variations
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hands-on-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hands-On Examples
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hands-On Examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-content-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1: Content Creation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2-data-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2: Data Analysis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3-code-generation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3: Code Generation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-and-iteration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing and Iteration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing and Iteration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-create-a-testing-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Create a Testing Framework
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ab-test-different-approaches" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. A/B Test Different Approaches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-evaluate-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Evaluate Results
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-common-evaluation-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Common Evaluation Metrics
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-tips-for-2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      Advanced Tips for 2025
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Tips for 2025">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-leverage-structured-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Leverage Structured Outputs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-context-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Context Management
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-multi-modal-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Multi-Modal Prompting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-prompt-chaining" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Prompt Chaining
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources-and-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources and Next Steps
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Resources and Next Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tools-and-platforms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tools and Platforms
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#learning-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Resources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Practice Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-prompt-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building a Prompt Library
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mixture-of-experts-moe-and-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mixture-of-Experts (MoE) and Prompt Engineering
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mixture-of-Experts (MoE) and Prompt Engineering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moe-implementation-status-in-frontier-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      MoE Implementation Status in Frontier Models
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notes:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-components-of-moe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Components of MoE:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-moe-works-in-llms" class="md-nav__link">
+    <span class="md-ellipsis">
+      How MoE Works in LLMs:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-does-moe-change-prompt-engineering" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Does MoE Change Prompt Engineering?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How Does MoE Change Prompt Engineering?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-need-for-expert-aware-prompting" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Need for Expert-Aware Prompting:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-enhanced-chain-of-thought-cot-and-multi-step-reasoning" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Enhanced Chain-of-Thought (CoT) and Multi-Step Reasoning:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-handling-sparsity-and-variability" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Handling Sparsity and Variability:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-efficiency-in-prompt-length-and-complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Efficiency in Prompt Length and Complexity:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-broader-implications-and-best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Broader Implications and Best Practices:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-wording-changes-can-steer-which-experts-wake-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small wording changes can steer which experts wake up
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-more-of-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do more of this
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-less-of-this" class="md-nav__link">
+    <span class="md-ellipsis">
+      Do less of this
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-routing-friendly-prompt-skeleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      A routing-friendly prompt skeleton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-with-moe-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting with MoE models
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-6-part-prompting-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 6-Part Prompting Framework
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="prompt-and-context-engineering-tutorial-for-beginners-a-comprehensive-guide-to-effective-ai-communication">Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication</h1>
+<p><strong><a href="https://www.youtube.com/playlist?list=PL0vKVrkG4hWpeKmZyCRTpfRiLQ13b5uRX">Panaversity YouTube Class Playlist</a></strong></p>
+<p><img src="stats.jpg" alt="llm_share" width="300"/></p>
+<p><strong>Key Takeaways</strong>
+- With 46.59B visits, ChatGPT accounts for more than 83% of total traffic among the top 10 chatbots.
+- The second most-used chatbot, DeepSeek at 2.74B visits, has barely 6% of ChatGPT’s traffic.
+- While traffic is concentrated, the list includes a mix of U.S., Chinese, and European players.</p>
+<h2 id="how-llm-works">How LLM Works</h2>
+<p><a href="https://sloanreview.mit.edu/article/how-llms-work/">How LLMs Work: Top 10 Executive-Level Questions</a></p>
+<h2 id="understand-the-power-of-prompts-context-engineering-for-agentic-ai-developers-image-and-video-generation-uxui-design-and-ui-development">Understand the Power of Prompts: Context Engineering for Agentic AI Developers, Image and Video Generation, UX/UI Design and UI Development</h2>
+<p>To understand the power of LLMs and prompt engineering go through these tutorials: </p>
+<ul>
+<li><strong><a href="https://github.com/panaversity/learn-n8n-agentic-ai/blob/main/00_prompt_engineering/context_engineering_tutorial.md">Complete Guide to Context Engineering for AI Agents</a></strong></li>
+<li><strong><a href="https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/image_generation/readme.md">Nano Banana Tutorial</a></strong></li>
+<li><strong><a href="https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/video_generation/readme.md">Google's Veo 3: A Guide With Practical Examples</a></strong></li>
+<li><strong><a href="https://github.com/panaversity/learn-low-code-agentic-ai/tree/main/00_prompt_engineering/ux_design">UX Design by Prompting</a></strong></li>
+<li><strong><a href="https://github.com/panaversity/learn-low-code-agentic-ai/tree/main/00_prompt_engineering/ui_development">UI Development by Prompting</a></strong></li>
+</ul>
+<h2 id="which-is-the-best-llm">Which is the best LLM?</h2>
+<p>See how leading models stack up across text, image, vision, and beyond. This page gives you a snapshot of each Arena:</p>
+<p>https://lmarena.ai/leaderboard</p>
+<h2 id="use-these-prompt-engineering-tools-to-learn">Use these Prompt Engineering Tools to Learn</h2>
+<p>https://platform.openai.com/chat/</p>
+<p>https://aistudio.google.com/</p>
+<p>https://console.anthropic.com/</p>
+<h2 id="prompt-coach">Prompt Coach"</h2>
+<p>Here’s a reusable “Prompt Coach” prompt you can keep handy. You’ll paste this into ChatGPT (or any LLM), then just drop in your messy idea, and it will rewrite it into a polished, effective prompt for you:</p>
+<p>Copy Paste this in your LLM:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>You are my Prompt Coach. I will give you a rough or unclear prompt. 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Your task is to:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>1. Clarify it
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>2. Add missing context
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>3. Structure it for best results
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>4. Suggest 2–3 alternative versions (different styles: simple, detailed, structured)
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Here’s my rough prompt: [INSERT YOUR PROMPT HERE]
+</span></code></pre></div>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#what-is-prompt-engineering">What is Prompt Engineering?</a></li>
+<li><a href="#understanding-large-language-models">Understanding Large Language Models</a></li>
+<li><a href="#essential-configuration-settings">Essential Configuration Settings</a></li>
+<li><a href="#fundamental-prompting-techniques">Fundamental Prompting Techniques</a></li>
+<li><a href="#advanced-prompting-strategies">Advanced Prompting Strategies</a></li>
+<li><a href="#best-practices-for-effective-prompts">Best Practices for Effective Prompts</a></li>
+<li><a href="#common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</a></li>
+<li><a href="#hands-on-examples">Hands-On Examples</a></li>
+<li><a href="#testing-and-iteration">Testing and Iteration</a></li>
+<li><a href="#resources-and-next-steps">Resources and Next Steps</a></li>
+<li><a href="#mixture-of-experts-moe-and-prompt-engineering">Mixture-of-Experts (MoE) and Prompt Engineering</a></li>
+<li><a href="https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/readme.md#the-6-part-prompting-framework">The 6-Part Prompting Framework</a></li>
+</ol>
+<h2 id="what-is-prompt-engineering">What is Prompt Engineering?</h2>
+<p>Prompt engineering is the art and science of crafting instructions that guide AI language models to produce desired outputs. Think of it as learning to communicate effectively with AI systems to achieve specific goals.</p>
+<p><strong>Why is it important?</strong>
+- You don't need to be a programmer to use AI effectively
+- Good prompts can dramatically improve AI performance
+- It's an iterative skill that improves with practice
+- It's becoming essential for productivity in many fields</p>
+<h2 id="prompt-engineering-vs-context-engineering">Prompt engineering vs. context engineering</h2>
+<p><strong>Prompt engineering</strong> = crafting the <em>instruction</em> you give the model.
+<strong>Context engineering</strong> = curating the <em>information</em> the model can see when following that instruction.</p>
+<h3 id="quick-contrast">Quick contrast</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Prompt engineering</th>
+<th>Context engineering</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Goal</td>
+<td>Tell the model <em>how</em> to behave and <em>what</em> to produce</td>
+<td>Give the model the <em>facts/examples</em> it should rely on</td>
+</tr>
+<tr>
+<td>Levers</td>
+<td>Wording, structure, roles, constraints, output schema, few-shot examples</td>
+<td>Retrieval (RAG), documents, knowledge bases, tools/APIs, memory, state across turns</td>
+</tr>
+<tr>
+<td>Typical changes</td>
+<td>“Be concise. Return valid JSON with fields X/Y/Z.”</td>
+<td>“Attach the company glossary, latest policy PDF, and retrieved passages for this query.”</td>
+</tr>
+<tr>
+<td>Failure mode</td>
+<td>Vague instructions → messy/incorrect format</td>
+<td>Missing/irrelevant info → hallucinations/outdated answers</td>
+</tr>
+<tr>
+<td>Ownership</td>
+<td>UX/prompt designers, app devs</td>
+<td>Data/ML/platform teams (pipelines, indexing, chunking, evals)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-they-work-together">How they work together</h3>
+<ul>
+<li>Start with a <strong>good prompt</strong>: clear task, constraints, and an <strong>output contract</strong> (e.g., JSON schema).</li>
+<li>Then <strong>ground it with context</strong>: supply only the <em>most relevant</em> passages, tables, and tool results.</li>
+<li>The prompt guides <em>behavior</em>; the context supplies <em>knowledge</em>. You usually need both.</li>
+</ul>
+<h3 id="concrete-examples">Concrete examples</h3>
+<ol>
+<li>
+<p><strong>Invoice → JSON extractor</strong></p>
+</li>
+<li>
+<p><em>Prompt engineering</em>: “Extract fields {vendor, date, total}. Return JSON only. If a field is missing, use null.”</p>
+</li>
+<li>
+<p><em>Context engineering</em>: Provide a few labeled examples and attach the vendor’s invoice spec retrieved via embeddings.</p>
+</li>
+<li>
+<p><strong>Policy Q\&amp;A bot</strong></p>
+</li>
+<li>
+<p><em>Prompt engineering</em>: “Answer using the attached passages; if unsure, say ‘Not in policy.’ Cite section IDs.”</p>
+</li>
+<li>
+<p><em>Context engineering</em>: RAG over your policy repo (chunking, metadata filters like <code>department=HR</code>, freshness boosts), plus a recency cache for updates.</p>
+</li>
+<li>
+<p><strong>Agentic workflow</strong></p>
+</li>
+<li>
+<p><em>Prompt engineering</em>: Tool-use instructions and function signatures.</p>
+</li>
+<li><em>Context engineering</em>: Feed tool responses (DB rows, API payloads) back into the context window each step; maintain short-term memory/state.</li>
+</ol>
+<h3 id="practical-tips">Practical tips</h3>
+<ul>
+<li>Keep prompts <strong>short, specific, and testable</strong>; define output schemas.</li>
+<li>Prefer <strong>few-shot</strong> examples only when they generalize; otherwise move them into <strong>retrieval</strong>.</li>
+<li>For context: optimize <strong>chunking</strong>, <strong>ranking</strong>, <strong>deduping</strong>, and <strong>token budgets</strong>; log what was retrieved for each answer.</li>
+<li>Add <strong>citations</strong> and “answer only from context” instructions when correctness matters.</li>
+<li>Evaluate both layers separately: prompt A/B tests and retrieval quality (precision/recall, groundedness).</li>
+</ul>
+<p><strong>One-liner:</strong> Prompt engineering is <em>how you ask</em>; context engineering is <em>what you show</em>. Combine them for reliable, scalable LLM apps.</p>
+<h2 id="understanding-large-language-models">Understanding Large Language Models</h2>
+<h3 id="how-llms-work-the-basics">How LLMs Work (The Basics)</h3>
+<p>Large Language Models are prediction engines that:
+- Take text input (your prompt)
+- Predict the next most likely word/token
+- Continue this process to generate complete responses
+- Base predictions on patterns learned from training data</p>
+<h3 id="key-concept-autocompletion">Key Concept: Autocompletion</h3>
+<p>LLMs don't "understand" in the human sense—they're sophisticated autocomplete systems. Your prompt sets up the context for what should come next.</p>
+<h2 id="essential-configuration-settings">Essential Configuration Settings</h2>
+<p>Before diving into prompt techniques, understand these key parameters that control AI behavior:</p>
+<h3 id="temperature-0-1">Temperature (0-1)</h3>
+<ul>
+<li><strong>Low (0-0.3)</strong>: Focused, consistent, deterministic responses</li>
+<li><strong>Medium (0.4-0.7)</strong>: Balanced creativity and consistency</li>
+<li><strong>High (0.8-1.0)</strong>: Creative, diverse, but potentially unpredictable</li>
+</ul>
+<p><strong>When to use:</strong>
+- Temperature 0: Math problems, factual questions
+- Temperature 0.7: Creative writing, brainstorming
+- Temperature 0.9: Poetry, experimental content</p>
+<h3 id="output-lengthtoken-limits">Output Length/Token Limits</h3>
+<ul>
+<li>Controls maximum response length</li>
+<li>Higher limits = more computational cost</li>
+<li>Set appropriately for your task needs</li>
+</ul>
+<h3 id="top-k-and-top-p-nucleus-sampling">Top-K and Top-P (Nucleus Sampling)</h3>
+<ul>
+<li><strong>Top-K</strong>: Limits choices to top K most likely tokens</li>
+<li><strong>Top-P</strong>: Limits choices based on cumulative probability</li>
+<li>Work together with temperature to control randomness</li>
+</ul>
+<p><strong>Recommended starting points:</strong>
+- Conservative: Temperature 0.1, Top-P 0.9, Top-K 20
+- Balanced: Temperature 0.2, Top-P 0.95, Top-K 30
+- Creative: Temperature 0.9, Top-P 0.99, Top-K 40</p>
+<h2 id="fundamental-prompting-techniques">Fundamental Prompting Techniques</h2>
+<h3 id="1-zero-shot-prompting">1. Zero-Shot Prompting</h3>
+<p>The simplest approach—just ask directly without examples.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Classify this movie review as positive, negative, or neutral:
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>&quot;The film was visually stunning but the plot felt rushed.&quot;
+</span></code></pre></div></p>
+<p><strong>When to use:</strong>
+- Simple, well-defined tasks
+- When the model has clear knowledge of the domain
+- Quick one-off requests</p>
+<h3 id="2-one-shot-prompting">2. One-Shot Prompting</h3>
+<p>Provide a single example to guide the response format.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Translate English to French:
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>English: &quot;Hello, how are you?&quot;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>French: &quot;Bonjour, comment allez-vous?&quot;
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>English: &quot;Where is the library?&quot;
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>French:
+</span></code></pre></div></p>
+<h3 id="3-few-shot-prompting">3. Few-Shot Prompting</h3>
+<p>Provide multiple examples to establish a clear pattern.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Convert customer feedback to structured data:
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Feedback: &quot;Great service, but food was cold&quot;
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>JSON: {&quot;service&quot;: &quot;positive&quot;, &quot;food&quot;: &quot;negative&quot;, &quot;overall&quot;: &quot;mixed&quot;}
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>Feedback: &quot;Amazing experience, will definitely return&quot;
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>JSON: {&quot;service&quot;: &quot;positive&quot;, &quot;food&quot;: &quot;positive&quot;, &quot;overall&quot;: &quot;positive&quot;}
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>Feedback: &quot;Terrible food and rude staff&quot;
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>JSON:
+</span></code></pre></div></p>
+<p><strong>Best practices:</strong>
+- Use 3-5 examples for most tasks
+- Include diverse examples
+- Mix up the classes in classification tasks
+- Ensure examples are high-quality and consistent</p>
+<h3 id="4-system-prompting">4. System Prompting</h3>
+<p>Set overall context and behavior guidelines.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>You are a helpful travel guide. Provide practical, accurate information about destinations. Always include:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>- Key attractions
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>- Local customs to be aware of
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>- Budget considerations
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>- Best time to visit
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>User: Tell me about visiting Tokyo.
+</span></code></pre></div></p>
+<h3 id="5-role-prompting">5. Role Prompting</h3>
+<p>Assign a specific character or expertise to the AI.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Act as an experienced software architect. I need help designing a scalable web application for 1 million users. What architecture patterns should I consider?
+</span></code></pre></div></p>
+<p><strong>Effective roles:</strong>
+- Subject matter expert (doctor, lawyer, teacher)
+- Creative roles (writer, designer, poet)
+- Analytical roles (data analyst, consultant)
+- Communication styles (friendly tutor, formal advisor)</p>
+<h3 id="6-contextual-prompting">6. Contextual Prompting</h3>
+<p>Provide specific background information relevant to the task.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Context: You&#39;re writing for a tech blog aimed at beginners who have never coded before.
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Write a 200-word explanation of what an API is, using simple language and practical examples.
+</span></code></pre></div></p>
+<h2 id="advanced-prompting-strategies">Advanced Prompting Strategies</h2>
+<h3 id="chain-of-thought-cot-prompting">Chain of Thought (CoT) Prompting</h3>
+<p>Encourage step-by-step reasoning for complex problems.</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Solve this step by step:
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>If I was 6 when my sister was half my age, how old is my sister when I&#39;m 40?
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Let me think through this step by step:
+</span></code></pre></div></p>
+<p><strong>When to use:</strong>
+- Math problems
+- Logical reasoning
+- Complex analysis
+- Multi-step processes</p>
+<p><strong>Best practices:</strong>
+- Use "Let's think step by step" or similar phrases
+- Set temperature to 0 for consistent reasoning
+- Extract final answers separately from reasoning</p>
+<h3 id="self-consistency">Self-Consistency</h3>
+<p>Generate multiple reasoning paths and select the most common answer.</p>
+<p><strong>Process:</strong>
+1. Ask the same question multiple times with different phrasings
+2. Compare the answers
+3. Choose the most frequently occurring result</p>
+<p><strong>Example:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Question: If a store offers a 20% discount on a $50 item, what is the final price?
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Generate 3 different reasoning paths for this question and select the most consistent answer.
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Path 1: To find the final price, calculate the discount: 20% of $50 is 0.20 × 50 = $10. Subtract this from the original price: $50 - $10 = $40. The final price is $40.
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Path 2: A 20% discount means paying 80% of the original price. So, 80% of $50 is 0.80 × 50 = $40. Therefore, the final price is $40.
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>Path 3: Compute the discount amount: 20% = 0.20, so 0.20 × $50 = $10 off. The original price is $50, so after the discount, it’s $50 - $10 = $40. The final price is $40.
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>Most common answer: $40
+</span></code></pre></div></p>
+<p><strong>Explanation of Concept:</strong>
+Self-Consistency involves generating multiple answers to the same question using varied reasoning approaches to ensure reliability. By comparing the results, you select the most frequent or consistent outcome, reducing the chance of errors from a single flawed reasoning path. This method leverages the model's ability to approach the problem from different angles, increasing confidence in the final answer when all paths converge, as seen here with the consistent result of $40.</p>
+<h3 id="step-back-prompting">Step-Back Prompting</h3>
+<p>Ask a more general question first, then use that context for the specific question.</p>
+<p><strong>Example 1:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>First, what are the key principles of good user interface design?
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>[Get response]
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>Now, using those principles, redesign this mobile app&#39;s login screen: [description]
+</span></code></pre></div></p>
+<p><strong>Example 2:</strong>
+Question: How should I optimize the loading speed of my e-commerce website?
+<div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Step 1: First, what are the key factors that generally affect website loading speed?
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Response: Key factors include:
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>- Server response time (hosting quality, server location)
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>- Image and asset optimization (file size, compression)
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>- Code efficiency (minifying CSS/JavaScript, reducing HTTP requests)
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>- Caching strategies (browser caching, CDNs)
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>- Third-party scripts (ads, analytics)
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>Step 2: Using these factors, provide specific recommendations to optimize the loading speed of an e-commerce website with heavy product images and multiple third-party plugins.
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>Response:
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>1. **Server Optimization**: Choose a reliable hosting provider with servers close to your audience. Enable server-side caching (e.g., Redis or Varnish).
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>2. **Image Optimization**: Compress product images using formats like WebP. Implement lazy loading to defer off-screen images.
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>3. **Code Efficiency**: Minify CSS and JavaScript files. Combine small files to reduce HTTP requests.
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>4. **Caching**: Use a Content Delivery Network (CDN) like Cloudflare to cache static content globally. Set browser cache headers for repeat visitors.
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>5. **Third-Party Plugins**: Audit and remove unnecessary plugins. Asynchronously load scripts for analytics or ads to avoid blocking page rendering.
+</span></code></pre></div></p>
+<p><strong>Explanation of Concept:</strong>
+Step-Back Prompting involves first asking a broader, foundational question to establish key principles or context before tackling the specific task. This approach ensures the model grounds its response in general knowledge (e.g., factors affecting website speed) before applying it to the specific problem (e-commerce site optimization). By breaking the task into two steps, the model produces more informed and structured recommendations, reducing the risk of overlooking critical factors.</p>
+<h3 id="react-reasoning-acting">ReAct (Reasoning + Acting)</h3>
+<p>Combine reasoning with tool use or actions.</p>
+<p><strong>Example 1:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>I need to find out how many children the members of Metallica have in total.
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Thought: I need to find information about each band member and their children.
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Action: Search for &quot;Metallica band members&quot;
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Observation: [results]
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Thought: Now I need to search for each member individually...
+</span></code></pre></div></p>
+<p><strong>Example 2:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Question: What is the current population of Tokyo, and how does it compare to New York City?
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Thought: I need to find the current population of Tokyo and New York City to compare them. I should start by searching for the latest population data for Tokyo.
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>Action: web_search
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>&lt;parameter name=&quot;query&quot;&gt;current population of Tokyo 2025&lt;/parameter
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>Observation: [Assume tool response: According to recent estimates, Tokyo&#39;s population in 2025 is approximately 37.4 million in the metropolitan area.]
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>Thought: Now I have Tokyo&#39;s population. Next, I need the population for New York City.
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>Action: web_search
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>&lt;parameter name=&quot;query&quot;&gt;current population of New York City 2025&lt;/parameter
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>Observation: [Assume tool response: New York City&#39;s metropolitan area population in 2025 is estimated at about 23.6 million.]
+</span><span id="__span-12-16"><a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>
+</span><span id="__span-12-17"><a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>Thought: With both figures, I can compare them. Tokyo has a larger population than New York City by about 13.8 million people.
+</span><span id="__span-12-18"><a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>
+</span><span id="__span-12-19"><a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>Final Answer: Tokyo&#39;s population is approximately 37.4 million, compared to New York City&#39;s 23.6 million, making Tokyo significantly larger.
+</span></code></pre></div></p>
+<p><strong>Explanation of Concept:</strong>
+ReAct (Reasoning + Acting) is a prompting strategy that interleaves reasoning steps (Thoughts) with actions (tool calls or external queries) to solve complex problems iteratively. Each cycle includes a Thought (planning the next step), an Action (executing a tool or search), and an Observation (processing the result). This loop continues until the question is resolved, allowing the model to dynamically gather information and refine its approach. It's particularly useful for tasks requiring real-time data or multi-step verification, as demonstrated by sequentially fetching and comparing population data.</p>
+<h3 id="tree-of-thoughts-tot">Tree of Thoughts (ToT)</h3>
+<p>Explore multiple reasoning branches simultaneously for complex problems.</p>
+<p><strong>When to use:</strong>
+- Creative problem solving
+- Strategic planning
+- Complex decision-making
+- Tasks requiring exploration of alternatives</p>
+<p><strong>Example:</strong></p>
+<p>Question: What is the best marketing strategy for launching a new eco-friendly clothing brand targeting young adults?</p>
+<p>Task: Explore multiple strategic approaches, evaluate them, and select the best one.</p>
+<p><strong>Branch 1: Social Media Campaign</strong>
+Thought: Young adults are active on platforms like Instagram and TikTok. A campaign using influencers could build brand awareness.
+Exploration:
+- Pros: High engagement, visually appealing for clothing, cost-effective with micro-influencers.
+- Cons: Risk of inauthentic partnerships, oversaturation in influencer marketing.
+Evaluation: Strong for visibility but needs unique content to stand out. Score: 8/10.</p>
+<p><strong>Branch 2: Sustainable Pop-Up Events</strong>
+Thought: Hosting pop-up shops at eco-conscious festivals or college campuses could create direct engagement.
+Exploration:
+- Pros: Hands-on experience with products, builds community, aligns with eco-friendly values.
+- Cons: High logistical costs, limited geographic reach.
+Evaluation: Great for brand authenticity but resource-intensive. Score: 7/10.</p>
+<p><strong>Branch 3: Collaborative Partnerships</strong>
+Thought: Partnering with eco-friendly brands (e.g., sustainable accessories) could cross-promote to aligned audiences.
+Exploration:
+- Pros: Expands reach via partner networks, reinforces eco-mission.
+- Cons: Complex coordination, potential brand dilution.
+Evaluation: Effective for niche targeting but requires careful partner selection. Score: 7.5/10.</p>
+<p><strong>Synthesis</strong>: Combine a social media campaign (Branch 1) with selective pop-up events (Branch 2) for maximum impact. Use partnerships (Branch 3) to amplify reach at events.</p>
+<p>Final Strategy: Launch with a TikTok influencer campaign showcasing eco-friendly clothing, paired with pop-up shops at green festivals to engage young adults directly. Collaborate with a sustainable accessory brand to co-promote at events.</p>
+<p><strong>Explanation of Concept:</strong>
+Tree of Thoughts (ToT) involves generating multiple reasoning branches to explore different solutions to a problem, evaluating each, and synthesizing the best ideas into a final answer. Each branch represents a distinct approach, which is explored, assessed for pros and cons, and scored. This method is ideal for complex, open-ended tasks like strategic planning, as it encourages creative exploration and systematic comparison, as shown in the marketing strategy example above.</p>
+<h2 id="best-practices-for-effective-prompts">Best Practices for Effective Prompts</h2>
+<h3 id="1-be-specific-and-clear">1. Be Specific and Clear</h3>
+<p><strong>Bad:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Write about dogs.
+</span></code></pre></div></p>
+<p><strong>Good:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Write a 300-word informative article about the health benefits of owning a dog, focusing on mental health, physical activity, and social connections. Use a friendly, accessible tone for general readers.
+</span></code></pre></div></p>
+<h3 id="2-use-action-verbs">2. Use Action Verbs</h3>
+<p>Be explicit about what you want the AI to do:
+- Analyze, Compare, Create, Describe, Evaluate
+- Extract, Generate, List, Rank, Summarize
+- Translate, Write, Explain, Classify</p>
+<h3 id="3-provide-examples-when-possible">3. Provide Examples When Possible</h3>
+<p>Examples are the most powerful way to communicate your expectations.</p>
+<h3 id="4-structure-your-prompts">4. Structure Your Prompts</h3>
+<p>Use clear formatting:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Task: [What you want done]
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Context: [Background information]
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Format: [How you want the output structured]
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Example: [Sample of desired output]
+</span></code></pre></div></p>
+<h3 id="5-use-instructions-over-constraints">5. Use Instructions Over Constraints</h3>
+<p><strong>Better:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Write a professional email summarizing the key points from our meeting.
+</span></code></pre></div></p>
+<p><strong>Avoid:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Write an email but don&#39;t make it too long or too informal or too detailed.
+</span></code></pre></div></p>
+<h3 id="6-control-output-format">6. Control Output Format</h3>
+<p>Specify exactly how you want the response structured:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Return your answer as a JSON object with the following structure:
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>{
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>  &quot;main_idea&quot;: &quot;string&quot;,
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>  &quot;supporting_points&quot;: [&quot;string&quot;, &quot;string&quot;],
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>  &quot;confidence_level&quot;: &quot;high/medium/low&quot;
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>}
+</span></code></pre></div></p>
+<h3 id="7-use-variables-for-reusability">7. Use Variables for Reusability</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Role: You are a {expertise} expert
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>Task: Analyze the {document_type} and provide recommendations for {target_audience}
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Context: This is for a {industry} company with {company_size} employees
+</span></code></pre></div>
+<h3 id="8-iterate-and-document">8. Iterate and Document</h3>
+<ul>
+<li>Keep track of what works and what doesn't</li>
+<li>Document your successful prompts</li>
+<li>Test variations to improve performance</li>
+</ul>
+<h2 id="common-pitfalls-and-how-to-avoid-them">Common Pitfalls and How to Avoid Them</h2>
+<h3 id="1-ambiguous-instructions">1. Ambiguous Instructions</h3>
+<p><strong>Problem:</strong> Vague requests lead to unpredictable outputs
+<strong>Solution:</strong> Be specific about what you want</p>
+<h3 id="2-contradictory-instructions">2. Contradictory Instructions</h3>
+<p><strong>Problem:</strong> Conflicting requirements confuse the model
+<strong>Solution:</strong> Review prompts for internal consistency</p>
+<h3 id="3-too-many-constraints">3. Too Many Constraints</h3>
+<p><strong>Problem:</strong> Over-constraining limits model creativity
+<strong>Solution:</strong> Focus on positive instructions rather than long lists of don'ts</p>
+<h3 id="4-ignoring-token-limits">4. Ignoring Token Limits</h3>
+<p><strong>Problem:</strong> Responses get cut off mid-sentence
+<strong>Solution:</strong> Set appropriate limits and structure accordingly</p>
+<h3 id="5-not-testing-variations">5. Not Testing Variations</h3>
+<p><strong>Problem:</strong> Assuming first attempt is optimal
+<strong>Solution:</strong> Test different phrasings, examples, and approaches</p>
+<h2 id="hands-on-examples">Hands-On Examples</h2>
+<h3 id="example-1-content-creation">Example 1: Content Creation</h3>
+<p><strong>Task:</strong> Create a social media post</p>
+<p><strong>Basic prompt:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Write a social media post about coffee.
+</span></code></pre></div></p>
+<p><strong>Improved prompt:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Write an engaging Instagram post for a local coffee shop&#39;s new seasonal drink. 
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Context: Fall season launch of Pumpkin Spice Maple Latte
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>Audience: Coffee enthusiasts aged 25-40
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>Tone: Warm, inviting, not overly promotional
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Format: 
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>- Main text (150 characters max)
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>- 3-5 relevant hashtags
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>- Call to action
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>Include sensory details about taste and aroma.
+</span></code></pre></div></p>
+<h3 id="example-2-data-analysis">Example 2: Data Analysis</h3>
+<p><strong>Task:</strong> Analyze customer feedback</p>
+<p><strong>Basic prompt:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>What do customers think about our product?
+</span></code></pre></div></p>
+<p><strong>Improved prompt:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>Analyze the following customer reviews and provide insights:
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+</span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Reviews: [paste reviews here]
+</span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>
+</span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>Please provide:
+</span><span id="__span-23-6"><a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>1. Overall sentiment breakdown (positive/negative/neutral percentages)
+</span><span id="__span-23-7"><a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>2. Top 3 most mentioned positive aspects
+</span><span id="__span-23-8"><a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>3. Top 3 most mentioned concerns or issues
+</span><span id="__span-23-9"><a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>4. Specific recommendations for improvement
+</span><span id="__span-23-10"><a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>5. Confidence level in your analysis
+</span><span id="__span-23-11"><a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>
+</span><span id="__span-23-12"><a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>Format as a structured report with clear headings.
+</span></code></pre></div></p>
+<h3 id="example-3-code-generation">Example 3: Code Generation</h3>
+<p><strong>Task:</strong> Create a function</p>
+<p><strong>Basic prompt:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Write a function to sort a list.
+</span></code></pre></div></p>
+<p><strong>Improved prompt:</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Write a Python function that:
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Requirements:
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>- Sorts a list of dictionaries by a specified key
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>- Handles missing keys gracefully (items without key go to end)
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>- Supports both ascending and descending order
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>- Includes proper error handling
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>- Has clear documentation
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>Example usage:
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>data = [{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 30}, {&quot;name&quot;: &quot;Bob&quot;, &quot;age&quot;: 25}]
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>result = sort_by_key(data, &quot;age&quot;, descending=False)
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>Please include:
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>- Function definition with type hints
+</span><span id="__span-25-16"><a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>- Docstring with parameters and return value
+</span><span id="__span-25-17"><a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>- Example usage
+</span><span id="__span-25-18"><a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>- Brief explanation of the approach
+</span></code></pre></div></p>
+<h2 id="testing-and-iteration">Testing and Iteration</h2>
+<h3 id="1-create-a-testing-framework">1. Create a Testing Framework</h3>
+<p>A testing framework is a documented, organized system for recording and analyzing how different prompts perform when interacting with an AI model. It involves creating a standardized way to:</p>
+<ul>
+<li>Record prompt variations, their goals, and settings (e.g., model used, temperature).</li>
+<li>Test these prompts to assess the quality of the AI's outputs.</li>
+<li>Evaluate results based on specific criteria (e.g., accuracy, relevance, style).</li>
+<li>Iterate by refining prompts based on insights from the tests.</li>
+</ul>
+<p>The framework ensures that prompt engineering is not a haphazard process but a methodical one, allowing users to identify what works, what doesn’t, and how to improve prompts over time.</p>
+<p>Document your prompts systematically:</p>
+<table>
+<thead>
+<tr>
+<th>Prompt Version</th>
+<th>Goal</th>
+<th>Model</th>
+<th>Temperature</th>
+<th>Output Quality</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v1.0</td>
+<td>Generate blog post</td>
+<td>GPT-4</td>
+<td>0.7</td>
+<td>Good</td>
+<td>Too formal</td>
+</tr>
+<tr>
+<td>v1.1</td>
+<td>Generate blog post</td>
+<td>GPT-4</td>
+<td>0.7</td>
+<td>Better</td>
+<td>Added tone guidance</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-ab-test-different-approaches">2. A/B Test Different Approaches</h3>
+<p>A/B testing in prompt engineering involves creating and trying out multiple versions of a prompt (e.g., different wordings, structures, examples, or settings like temperature) to see which version yields the most accurate, relevant, or high-quality output from the AI. It’s a systematic way to experiment and optimize prompts by comparing their performance side by side.</p>
+<p>Try variations:
+- Different example sets
+- Various instruction phrasings
+- Different temperature settings
+- Alternative output formats</p>
+<h3 id="3-evaluate-results">3. Evaluate Results</h3>
+<p>Consider:
+- <strong>Accuracy</strong>: Does it answer correctly?
+- <strong>Relevance</strong>: Is it on-topic?
+- <strong>Completeness</strong>: Does it cover everything needed?
+- <strong>Style</strong>: Does it match the desired tone?
+- <strong>Format</strong>: Is it structured as requested?</p>
+<h3 id="4-common-evaluation-metrics">4. Common Evaluation Metrics</h3>
+<ul>
+<li><strong>Consistency</strong>: Same prompt, similar outputs</li>
+<li><strong>Following instructions</strong>: Adherence to specific requirements</li>
+<li><strong>Creativity</strong> (when desired): Novel and interesting responses</li>
+<li><strong>Factual accuracy</strong>: Correctness of information</li>
+</ul>
+<h2 id="advanced-tips-for-2025">Advanced Tips for 2025</h2>
+<h3 id="1-leverage-structured-outputs">1. Leverage Structured Outputs</h3>
+<p>Use JSON, XML, or other structured formats for complex data:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Return analysis as JSON:
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>{
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>  &quot;summary&quot;: &quot;brief overview&quot;,
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>  &quot;key_insights&quot;: [&quot;insight1&quot;, &quot;insight2&quot;],
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>  &quot;recommendations&quot;: [
+</span><span id="__span-26-6"><a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>    {
+</span><span id="__span-26-7"><a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>      &quot;action&quot;: &quot;specific action&quot;,
+</span><span id="__span-26-8"><a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>      &quot;priority&quot;: &quot;high/medium/low&quot;,
+</span><span id="__span-26-9"><a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>      &quot;timeline&quot;: &quot;timeframe&quot;
+</span><span id="__span-26-10"><a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>    }
+</span><span id="__span-26-11"><a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>  ]
+</span><span id="__span-26-12"><a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>}
+</span></code></pre></div></p>
+<h3 id="2-context-management">2. Context Management</h3>
+<p>For long conversations:
+- Summarize previous context
+- Use system messages effectively
+- Break complex tasks into smaller parts</p>
+<h3 id="3-multi-modal-prompting">3. Multi-Modal Prompting</h3>
+<p>When working with models that support images:
+- Be explicit about what to look for in images
+- Combine text and visual instructions
+- Use images as examples or context</p>
+<h3 id="4-prompt-chaining">4. Prompt Chaining</h3>
+<p>Break complex tasks into steps:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>Step 1: Research the topic
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>Step 2: Create an outline based on research
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Step 3: Write the full content based on outline
+</span></code></pre></div></p>
+<h2 id="resources-and-next-steps">Resources and Next Steps</h2>
+<h3 id="tools-and-platforms">Tools and Platforms</h3>
+<ul>
+<li><strong>OpenAI Playground</strong>: Test prompts with GPT models</li>
+<li><strong>Anthropic Console</strong>: Experiment with Claude</li>
+<li><strong>Google AI Studio</strong>: Try Gemini models</li>
+<li><strong>Prompt optimization tools</strong>: Available from various providers</li>
+</ul>
+<h3 id="learning-resources">Learning Resources</h3>
+<ul>
+<li>Model documentation and guides</li>
+<li>Community forums and Discord servers</li>
+<li>GitHub repositories with prompt examples</li>
+<li>Academic papers on prompt engineering techniques</li>
+</ul>
+<h3 id="practice-projects">Practice Projects</h3>
+<ol>
+<li><strong>Personal Assistant</strong>: Create prompts for scheduling, email drafting</li>
+<li><strong>Content Creation</strong>: Develop templates for different types of writing</li>
+<li><strong>Data Analysis</strong>: Build prompts for interpreting datasets</li>
+<li><strong>Code Review</strong>: Create prompts for code analysis and improvement</li>
+</ol>
+<h3 id="building-a-prompt-library">Building a Prompt Library</h3>
+<ul>
+<li>Create templates for common tasks</li>
+<li>Document what works for different models</li>
+<li>Share and learn from other practitioners</li>
+<li>Keep updating as models improve</li>
+</ul>
+<h2 id="mixture-of-experts-moe-and-prompt-engineering">Mixture-of-Experts (MoE) and Prompt Engineering</h2>
+<p>Mixture-of-Experts (MoE) is a machine learning architecture designed to improve the efficiency and scalability of large models, particularly in the context of Large Language Models (LLMs). It draws from the concept of dividing complex tasks among specialized "experts" in a system, allowing the model to activate only a subset of its parameters for a given input rather than using the entire model every time. This sparse activation leads to computational savings while maintaining or even enhancing performance.</p>
+<p><img alt="" src="../moe.webp" /></p>
+<h4 id="moe-implementation-status-in-frontier-models">MoE Implementation Status in Frontier Models</h4>
+<p>Below is an table summarizing the Mixture-of-Experts (MoE) implementation status based on available information up to August 2025. </p>
+<table>
+<thead>
+<tr>
+<th><strong>LLM</strong></th>
+<th><strong>Developer</strong></th>
+<th><strong>MoE Implementation</strong></th>
+<th><strong>Details</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>GPT-5</strong></td>
+<td>OpenAI</td>
+<td>Yes (Speculated)</td>
+<td>Likely uses MoE with dynamic routing for reasoning levels. Estimated ~2T total parameters. No official confirmation, but performance (e.g., 74.9% SWE-bench) suggests sparse MoE-like design.</td>
+</tr>
+<tr>
+<td><strong>Grok 4</strong></td>
+<td>xAI</td>
+<td>Yes (Confirmed)</td>
+<td>Utilizes MoE with multi-agent architecture. ~500B total parameters, sparse activation. Strong performance on ARC-AGI (16.2% with Thinking Mode). Expert count not disclosed.</td>
+</tr>
+<tr>
+<td><strong>Gemini 2.5 Pro</strong></td>
+<td>Google</td>
+<td>Yes (Confirmed)</td>
+<td>Confirmed MoE with advanced reasoning capabilities. Details on sparsity and expert count not specified, but designed for efficient scaling.</td>
+</tr>
+<tr>
+<td><strong>Claude 4</strong></td>
+<td>Anthropic</td>
+<td>Unknown</td>
+<td>No confirmed details on Claude 4. Based on Claude 3.5 Sonnet, no MoE implementation is confirmed. Estimated ~400B parameters, likely dense architecture.</td>
+</tr>
+<tr>
+<td><strong>DeepSeek-V3</strong></td>
+<td>DeepSeek</td>
+<td>Yes (Confirmed)</td>
+<td>MoE model with 671B total parameters, 37B active per token, using DeepSeekMoE architecture with Multi-Head Latent Attention (MLA). Highly efficient, trained on 14.8T tokens for ~$5.6M.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes">Notes:</h3>
+<ul>
+<li><strong>GPT-5</strong>: MoE is speculated due to its dynamic routing and massive scale (~2T parameters), suggesting a sparse architecture. No official OpenAI confirmation.</li>
+<li><strong>Grok 4</strong>: Confirmed MoE with multi-agent design for specialized task handling, enhancing efficiency through sparse activation.</li>
+<li><strong>Gemini 2.5 Pro</strong>: Confirmed MoE, optimized for scalability, though specific expert counts are undisclosed.</li>
+<li><strong>Claude 4</strong>: No explicit data on Claude 4. Assuming similarity to Claude 3.5 Sonnet, it likely uses a dense transformer without MoE, pending new evidence.</li>
+<li><strong>DeepSeek-V3</strong>: Explicitly uses MoE with 671B total parameters, activating only 37B per token via DeepSeekMoE and MLA, achieving cost-effective training and inference. Outperforms many open-source models on benchmarks like MMLU and SWE-bench.</li>
+</ul>
+<h4 id="key-components-of-moe">Key Components of MoE:</h4>
+<ol>
+<li>
+<p><strong>Experts</strong>: These are specialized sub-networks (often feed-forward neural networks) within the model, each trained to handle specific types of data or tasks. For example, one expert might specialize in mathematical reasoning, another in creative writing, and so on. In advanced LLMs, there can be dozens or hundreds of experts (e.g., Mixtral 8x7B has 8 experts per layer).</p>
+</li>
+<li>
+<p><strong>Gating Network (or Router)</strong>: This is a lightweight mechanism (typically a simple neural network) that evaluates the input and decides which experts to route the data to. It assigns weights or probabilities to experts, selecting the top-k (e.g., top 2 out of 8) most relevant ones. The output is a weighted combination of the selected experts' responses. The gating is learned during training and can be dynamic, adapting to the input.</p>
+</li>
+<li>
+<p><strong>Sparse Activation</strong>: Unlike dense models (e.g., GPT-3 or Llama) where all parameters are activated for every token, MoE activates only a fraction (e.g., 10-20%) of the parameters per input. This makes MoE models "conditionally compute" – they scale to trillions of parameters but run as efficiently as smaller dense models during inference.</p>
+</li>
+</ol>
+<h4 id="how-moe-works-in-llms">How MoE Works in LLMs:</h4>
+<ul>
+<li><strong>Training</strong>: During pre-training, the model learns to route inputs to appropriate experts via auxiliary losses (e.g., load balancing to prevent any single expert from being overused). This is often done on massive datasets to ensure experts specialize without overlapping too much.</li>
+<li><strong>Inference</strong>: For a prompt, the gating network processes the input tokens layer by layer, routing them to experts. This parallelism allows for faster training and inference on hardware like GPUs/TPUs, as unused experts can be skipped.</li>
+<li><strong>Benefits</strong>:</li>
+<li><strong>Efficiency</strong>: Models like Grok-1 (314B parameters but activates ~25% per token) or Mixtral achieve high performance with lower compute costs compared to dense models of similar effective size.</li>
+<li><strong>Scalability</strong>: Enables "expert scaling" where adding more experts increases capacity without proportional compute growth.</li>
+<li><strong>Specialization</strong>: Experts can capture diverse knowledge, potentially leading to better handling of niche tasks.</li>
+<li><strong>Drawbacks</strong>:</li>
+<li><strong>Routing Instability</strong>: The gating can sometimes fail to balance load, leading to inefficiencies or biases.</li>
+<li><strong>Memory Overhead</strong>: Storing many experts requires more memory, though sparsity mitigates runtime costs.</li>
+<li><strong>Interpretability Challenges</strong>: It's harder to understand why a specific expert was chosen.</li>
+</ul>
+<p>MoE has become prevalent in advanced LLMs since around 2023, with models like Mistral's Mixtral, Google's Switch Transformers, and xAI's Grok-1 adopting it. <strong>By 2025, most frontier models (e.g., those from OpenAI, Google, Anthropic, and xAI) incorporate MoE variants for better parameter efficiency in the race toward AGI-scale systems.</strong></p>
+<h3 id="how-does-moe-change-prompt-engineering">How Does MoE Change Prompt Engineering?</h3>
+<p>Prompt engineering – the art of crafting inputs to elicit optimal responses from LLMs – traditionally focuses on clarity, structure, role-playing, chain-of-thought (CoT), and few-shot examples to guide dense models. MoE introduces nuances because of its modular, expert-based design, shifting the focus toward "expert elicitation" and robustness to routing dynamics. While core principles remain, MoE can make prompts more effective (or unpredictable) depending on how they activate the underlying experts. Here's how it impacts the practice:</p>
+<h4 id="1-need-for-expert-aware-prompting">1. <strong>Need for Expert-Aware Prompting</strong>:</h4>
+<ul>
+<li>In MoE models, the gating mechanism interprets the input to select experts. Vague or overly broad prompts might route to generic experts, leading to mediocre outputs, while targeted prompts can "awaken" specialized ones.</li>
+<li><strong>Change</strong>: Engineers must design prompts to signal specific domains. For instance, starting with "As a math expert..." might route to numerical specialists, improving accuracy on equations. This is akin to "role-playing" but more potent due to built-in specialization.</li>
+<li><strong>Example</strong>: In a dense model, a simple "Solve 2x + 3 = 7" works fine. In MoE, prefixing with "Using algebraic expertise:" could ensure routing to a math-focused expert, reducing errors from misrouting.</li>
+</ul>
+<h4 id="2-enhanced-chain-of-thought-cot-and-multi-step-reasoning">2. <strong>Enhanced Chain-of-Thought (CoT) and Multi-Step Reasoning</strong>:</h4>
+<ul>
+<li>MoE's experts can handle sub-tasks modularly, so prompts that break down problems (e.g., "Step 1: Analyze facts with historical expert. Step 2: Predict with forecasting expert.") leverage routing for better decomposition.</li>
+<li><strong>Change</strong>: Prompts become more "orchestrated," explicitly invoking expert-like steps. This can amplify CoT effectiveness, as different experts process intermediate steps. Studies show MoE models excel in long-context reasoning when prompts guide routing progressively.</li>
+<li><strong>Tip</strong>: Use iterative prompting (e.g., via API calls) to refine outputs, as initial routing might not be perfect – re-prompt with feedback to re-route.</li>
+</ul>
+<h4 id="3-handling-sparsity-and-variability">3. <strong>Handling Sparsity and Variability</strong>:</h4>
+<ul>
+<li>Outputs can vary more across runs due to stochastic routing (if top-k selection has randomness), making deterministic prompting harder.</li>
+<li><strong>Change</strong>: Emphasize consistency techniques like temperature=0 (for greedy decoding) or repeated sampling to average expert activations. Also, test prompts across multiple runs to identify routing-sensitive ones. In production, this might require "prompt ensembles" where multiple variants are tried to hit the right experts.</li>
+</ul>
+<h4 id="4-efficiency-in-prompt-length-and-complexity">4. <strong>Efficiency in Prompt Length and Complexity</strong>:</h4>
+<ul>
+<li>Shorter, focused prompts can efficiently activate few experts, reducing latency – a boon for real-time apps.</li>
+<li><strong>Change</strong>: MoE encourages concise, intent-clear prompts over verbose ones. However, for creative or open-ended tasks, adding domain hints (e.g., "In the style of a sci-fi expert") can unlock diverse expert combinations without bloating the input.</li>
+<li><strong>Few-Shot Learning</strong>: Examples in prompts help "train" the router on-the-fly, making MoE more adaptable to custom tasks than dense models, but they must align with expert domains to avoid dilution.</li>
+</ul>
+<h4 id="5-broader-implications-and-best-practices">5. <strong>Broader Implications and Best Practices</strong>:</h4>
+<ul>
+<li><strong>Positive Shifts</strong>: MoE reduces the need for heavy fine-tuning; prompt engineering can "fine-tune" via routing. It's great for multilingual or multimodal LLMs, where prompts specify modalities to route correctly.</li>
+<li><strong>Challenges</strong>: Black-box routing means trial-and-error is key – use A/B testing or logging to analyze which prompts activate desired behaviors. Ethically, be aware of potential biases if experts specialize unevenly (e.g., cultural experts).</li>
+<li><strong>Evolving Landscape (as of 2025)</strong>: With models like advanced Grok versions or Llama 3 MoE variants, tools like prompt optimizers (e.g., DSPy or Guidance) are adapting to simulate routing. Research suggests MoE amplifies prompt sensitivity, so hybrid approaches (combining with RAG for external knowledge) are rising.</li>
+</ul>
+<h2 id="small-wording-changes-can-steer-which-experts-wake-up">Small wording changes can steer which experts wake up</h2>
+<p>Because a router chooses experts <em>based on your tokens</em>, small wording changes can steer which experts wake up. That means prompt craft can influence which specialization you tap.</p>
+<h2 id="do-more-of-this">Do more of this</h2>
+<ol>
+<li>
+<p><strong>Front-load domain signals.</strong> Put the clearest task + domain cues in the first few lines to help the router lock onto the right experts early.</p>
+</li>
+<li>
+<p>“Role: Financial analyst. Task: 10-K variance analysis. Output: tabular summary + bullet risks.”</p>
+</li>
+<li><strong>Use unambiguous, domain-specific vocabulary.</strong> The router keys off tokens; plain, on-topic terms beat clever phrasing or euphemisms.</li>
+<li><strong>Separate mixed tasks.</strong> If you combine coding, legal, and marketing in one shot, the router may oscillate experts. Break it into steps or run sequential prompts.</li>
+<li><strong>Match examples to the task.</strong> Few-shot exemplars should be in the <em>same domain, format, and language</em> as your goal—this strongly reinforces the intended experts.</li>
+<li><strong>Be explicit about language and style.</strong> Start with: “Language: Urdu. Style: concise, technical.” Multilingual MoE models often have language-specialized experts.</li>
+<li><strong>Stabilize when you need consistency.</strong> Lower temperature/top-p reduces token drift, which indirectly reduces expert churn across the generation.</li>
+<li><strong>Keep retrieval context clean.</strong> In RAG, put a short task summary <em>before</em> the docs, and keep the docs on-topic; noisy context can misroute tokens.</li>
+</ol>
+<h2 id="do-less-of-this">Do less of this</h2>
+<ul>
+<li><strong>Cute indirection (“you know what I mean”)</strong>—it weakens routing signals.</li>
+<li><strong>Overlong preambles</strong> that bury the true task. MoE routes per token, but early tokens set the scene.</li>
+<li><strong>Mashing multiple formats</strong> (e.g., code + poetry + SQL) in one go—split it.</li>
+</ul>
+<h2 id="a-routing-friendly-prompt-skeleton">A routing-friendly prompt skeleton</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>System/Intro:
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>  Role: &lt;domain persona&gt;
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  Task: &lt;crisp objective&gt;
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>  Audience: &lt;who/level&gt;
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>  Language: &lt;one language only&gt;
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>  Output: &lt;format + constraints&gt;
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>Instructions:
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>  1) &lt;step&gt;
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>  2) &lt;step&gt;
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>  3) &lt;step&gt;
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>Examples (optional, tightly matched):
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>  &lt;short in-domain example(s)&gt;
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>Context (if any, trimmed to essentials):
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>  &lt;RAG snippets or data&gt;
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>Now solve the task.
+</span></code></pre></div>
+<h2 id="troubleshooting-with-moe-models">Troubleshooting with MoE models</h2>
+<ul>
+<li><strong>Inconsistent answers across runs?</strong> Add sharper domain anchors at the top; reduce temperature; include one very short, in-domain example.</li>
+<li><strong>It “misses” the skill you want (e.g., math vs. writing)?</strong> Use explicit skill tags (“Task type: quantitative proof/derivation”) and show the target format in a tiny exemplar.</li>
+<li><strong>Mixed-topic responses?</strong> Split the request; or ask for a plan first, then execute each step in a follow-up.</li>
+</ul>
+<p><strong>Bottom line:</strong> MoE doesn’t change the <em>foundation</em> of prompt engineering, but it <strong>raises the leverage of clear, early, domain-specific signals</strong> because they literally decide which specialists inside the model wake up for your tokens.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Prompt engineering is both an art and a science. It requires understanding how AI models work, clear communication skills, and systematic experimentation. The key to success is:</p>
+<ol>
+<li><strong>Start simple</strong> and add complexity gradually</li>
+<li><strong>Be specific</strong> about what you want</li>
+<li><strong>Provide examples</strong> whenever possible</li>
+<li><strong>Test and iterate</strong> to improve results</li>
+<li><strong>Document your successes</strong> for future reference</li>
+</ol>
+<p>As AI models continue to evolve, prompt engineering techniques will also advance. Stay curious, keep experimenting, and remember that the best prompt is one that consistently gives you the results you need.</p>
+<p>The future of AI interaction lies in clear, effective communication—and prompt engineering is your toolkit for making that communication as powerful as possible.</p>
+<hr />
+<h2 id="the-6-part-prompting-framework">The 6-Part Prompting Framework</h2>
+<p>Now take your prompting to next level by following this <a href="https://github.com/panaversity/learn-low-code-agentic-ai/blob/main/00_prompt_engineering/six_part_prompting_framework.md">The 6-Part Prompting Framework</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../context_engineering_tutorial/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Complete Guide to Context Engineering for AI Agents">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Complete Guide to Context Engineering for AI Agents
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../six_part_prompting_framework/" class="md-footer__link md-footer__link--next" aria-label="Next: The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Panaversity. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/panaversity/" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/panaversity/?igsh=cmljY3A2bmcyNzl3#" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCV1ZbnHzA7FwG7XXYYzE84w" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/panaversity/posts/?feedView=all" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>

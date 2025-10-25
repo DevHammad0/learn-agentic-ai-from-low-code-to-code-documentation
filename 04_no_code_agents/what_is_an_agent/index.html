@@ -1,0 +1,3005 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sitename.example/04_no_code_agents/what_is_an_agent/">
+      
+      
+        <link rel="prev" href="../readme/">
+      
+      
+        <link rel="next" href="../../05_knowledge_connections/01_file_search_workshop/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Agents VS Chatbots - Student's Guide - Learn Agentic AI from Low Code to Code - Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#agents-vs-chatbots-students-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-header__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Learn Agentic AI from Low Code to Code - Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Agents VS Chatbots - Student's Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Learn Agentic AI from Low Code to Code - Documentation" class="md-nav__button md-logo" aria-label="Learn Agentic AI from Low Code to Code - Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Learn Agentic AI from Low Code to Code - Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    learn-agentic-ai-from-low-code-to-code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Learn Agentic AI: From Low-Code to Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    00 agentic web
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            00 agentic web
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Index
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/implications_for_stakeholders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Chapter 3: Implications for Stakeholders
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/panaversity-openai-vision-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Vision for an AI-Driven Future Learning Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00_agentic_web/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    OpenAI's Blueprint to Power the Future Web with AI - Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    01 agentic org
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            01 agentic org
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/agentic_org_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Learning Guide to the Future of Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/graduate_level_quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Agentic Organization: A Graduate Level Assessment
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MCQ Quiz: The Agentic Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01_agentic_org/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Rise of Agentic Organizations: How AI Is Redefining the Future of Work and Business
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    02 ai and human readiness
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            02 ai and human readiness
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_ai_and_human_readiness/ai_transformation_guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating AI Transformation: A Strategic Guide for Beginners
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_ai_and_human_readiness/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI and Human Readiness in IT: Graduate-Level Assessment Quiz
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../02_ai_and_human_readiness/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Navigating the Crossroads of AI and Human Readiness in IT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    03 prompt engineering
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            03 prompt engineering
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/context_engineering_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Complete Guide to Context Engineering for AI Agents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt and Context Engineering Tutorial for Beginners: A Comprehensive Guide to Effective AI Communication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/six_part_prompting_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The Complete AI Prompting Framework: 6-Step Formula for 10x Better Results
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Image generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Image generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/image_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Engineering Tutorial for Nano Banana
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prompt driven development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            Prompt driven development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/prompt_driven_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prompt Driven Development (PDD)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ui development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            Ui development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/ui_development/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UI Development by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_7" id="__nav_5_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Ux design
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_7">
+            <span class="md-nav__icon md-icon"></span>
+            Ux design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/ux_design/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    UX Design by Prompting
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/ux_design/uxpilot_workflow_tutorial/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    The UX Pilot End-to-End Workflow: From Idea to Production-Ready UI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_8" id="__nav_5_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Video generation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_8">
+            <span class="md-nav__icon md-icon"></span>
+            Video generation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03_prompt_engineering/video_generation/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Video Generation Tutorial for Google Veo 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    04 no code agents
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            04 no code agents
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../applied_self_learning/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Applied Self-Learning Guide — What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../class_handson_project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Live Project: Assignments Grading and Feedback Agentic System
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pre-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Pre-Setup Guide: Getting Ready for Week 2 Session 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    What Is an Agent (No Code)?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Agents VS Chatbots - Student's Guide
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Agents VS Chatbots - Student's Guide
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-what-even-is-an-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: What Even IS an AI Agent?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: What Even IS an AI Agent?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-simplest-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Simplest Explanation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-11-the-best-analogy-your-friend-vs-your-mom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1.1: The Best Analogy - Your Friend vs Your Mom
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1.1: The Best Analogy - Your Friend vs Your Mom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chatbot-your-friend-who-just-answers-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatbot = Your Friend Who Just Answers Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-your-mom-who-actually-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent = Your Mom Who Actually Helps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-biggest-difference-in-one-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Biggest Difference in One Picture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-lets-break-down-an-agents-superpowers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Let's Break Down an Agent's Superpowers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Let&#39;s Break Down an Agent&#39;s Superpowers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#superpower-1-it-remembers-everything-about-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 1: It REMEMBERS Everything About You
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superpower-2-it-can-take-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 2: It Can TAKE ACTIONS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superpower-3-it-makes-smart-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 3: It Makes SMART DECISIONS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superpower-4-it-keeps-trying-if-things-go-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 4: It KEEPS TRYING If Things Go Wrong
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-lets-see-them-in-action-real-student-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Let's See Them In Action - Real Student Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Let&#39;s See Them In Action - Real Student Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-planning-your-weekend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 1: Planning Your Weekend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-ordering-food-with-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 2: Ordering Food with Friends
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-school-project-with-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 3: School Project with Friends
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-the-simple-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: The Simple Comparison
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: The Simple Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#side-by-side-what-they-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side-by-Side: What They Can Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-quick-comparison-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Quick Comparison Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-real-world-examples-you-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 6: Real World Examples You Know
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Real World Examples You Know">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netflix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Netflix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spotify
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-why-should-you-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 7: Why Should You Care?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Why Should You Care?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jobs-in-the-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jobs in the Future
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-you-need-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills You Need Now
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-one-thing-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ONE Thing to Remember
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Takeaway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-have-questions-heres-the-simplest-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Still Have Questions? Here's The Simplest Explanation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    05 knowledge connections
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            05 knowledge connections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/01_file_search_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 1: File Search with Vector Stores
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/02_connectors_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 2: Connectors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/03_mcp_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Workshop 3: MCP Servers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/04_mcp_nodes_workshop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    L4: MCP Nodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../05_knowledge_connections/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 5: Connecting Knowledge Safely
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    06 visual patterns
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            06 visual patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_visual_patterns/lab_agentic_system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab: Customer Support System Using All 4 Agentic Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../06_visual_patterns/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 6: Visual and Agentic Design Patterns
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    07 deploy chatkit
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            07 deploy chatkit
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../07_deploy_chatkit/readme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Session 7: Deploy with ChatKit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Assignments
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/01_agentic_ai_usecase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Assignment: Find One Real Agentic AI Use Case
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Teacher guidelines
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Teacher guidelines
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/teacher_guidelines/01_feedback_framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    💬 Standard Feedback Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/teacher_guidelines/01_grading_criteria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧮 Grading Rubric — “Find One Real Agentic AI Use Case”
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../assignments/teacher_guidelines/01_sample_eval/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧾 Example Teacher Evaluation (Sample)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#part-1-what-even-is-an-ai-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1: What Even IS an AI Agent?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1: What Even IS an AI Agent?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-simplest-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Simplest Explanation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-11-the-best-analogy-your-friend-vs-your-mom" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 1.1: The Best Analogy - Your Friend vs Your Mom
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 1.1: The Best Analogy - Your Friend vs Your Mom">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#chatbot-your-friend-who-just-answers-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chatbot = Your Friend Who Just Answers Questions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agent-your-mom-who-actually-helps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agent = Your Mom Who Actually Helps
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-biggest-difference-in-one-picture" class="md-nav__link">
+    <span class="md-ellipsis">
+      The Biggest Difference in One Picture
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-2-lets-break-down-an-agents-superpowers" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 2: Let's Break Down an Agent's Superpowers
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 2: Let&#39;s Break Down an Agent&#39;s Superpowers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#superpower-1-it-remembers-everything-about-you" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 1: It REMEMBERS Everything About You
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superpower-2-it-can-take-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 2: It Can TAKE ACTIONS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superpower-3-it-makes-smart-decisions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 3: It Makes SMART DECISIONS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#superpower-4-it-keeps-trying-if-things-go-wrong" class="md-nav__link">
+    <span class="md-ellipsis">
+      Superpower 4: It KEEPS TRYING If Things Go Wrong
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-3-lets-see-them-in-action-real-student-scenarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 3: Let's See Them In Action - Real Student Scenarios
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 3: Let&#39;s See Them In Action - Real Student Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario-1-planning-your-weekend" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 1: Planning Your Weekend
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-2-ordering-food-with-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 2: Ordering Food with Friends
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenario-3-school-project-with-friends" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scenario 3: School Project with Friends
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-4-the-simple-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 4: The Simple Comparison
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 4: The Simple Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#side-by-side-what-they-can-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      Side-by-Side: What They Can Do
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-5-quick-comparison-chart" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 5: Quick Comparison Chart
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-6-real-world-examples-you-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 6: Real World Examples You Know
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 6: Real World Examples You Know">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#netflix" class="md-nav__link">
+    <span class="md-ellipsis">
+      Netflix
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spotify" class="md-nav__link">
+    <span class="md-ellipsis">
+      Spotify
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#part-7-why-should-you-care" class="md-nav__link">
+    <span class="md-ellipsis">
+      Part 7: Why Should You Care?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Part 7: Why Should You Care?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jobs-in-the-future" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jobs in the Future
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skills-you-need-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      Skills You Need Now
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-one-thing-to-remember" class="md-nav__link">
+    <span class="md-ellipsis">
+      The ONE Thing to Remember
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Takeaway
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#still-have-questions-heres-the-simplest-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Still Have Questions? Here's The Simplest Explanation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="agents-vs-chatbots-students-guide">Agents VS Chatbots - Student's Guide</h1>
+<hr />
+<h2 id="part-1-what-even-is-an-ai-agent">Part 1: What Even IS an AI Agent?</h2>
+<h3 id="the-simplest-explanation">The Simplest Explanation</h3>
+<p><strong>Chatbot:</strong> A robot that answers your questions.</p>
+<p><strong>Agent:</strong> A robot that actually helps you DO things.</p>
+<p>That's literally the difference!</p>
+<hr />
+<h2 id="part-11-the-best-analogy-your-friend-vs-your-mom">Part 1.1: The Best Analogy - Your Friend vs Your Mom</h2>
+<h3 id="chatbot-your-friend-who-just-answers-questions">Chatbot = Your Friend Who Just Answers Questions</h3>
+<p><strong>You:</strong> "Hey, I need to finish my essay, do laundry, and go grocery shopping. What should I do?"</p>
+<p><strong>Friend (Chatbot):</strong> "Oh, that sounds busy! You should probably finish your essay first, then do laundry, then go shopping."</p>
+<p><strong>You:</strong> "Okay... where should I go shopping?"</p>
+<p><strong>Friend:</strong> "Umm, I think there's a store near your house?"</p>
+<p><strong>You:</strong> "Can you come with me?"</p>
+<p><strong>Friend:</strong> "Sorry, I can't. Good luck though!"</p>
+<p>Your friend just <em>talked</em> about the problem. You had to do everything yourself.</p>
+<hr />
+<h3 id="agent-your-mom-who-actually-helps">Agent = Your Mom Who Actually Helps</h3>
+<p><strong>You:</strong> "Mom, I need to finish my essay, do laundry, and go grocery shopping."</p>
+<p><strong>Mom (Agent):</strong> "I got this."</p>
+<p><em>Then your mom:</em></p>
+<ul>
+<li>Reminds you about the essay</li>
+<li>Does your laundry while you're busy</li>
+<li>Goes shopping and buys groceries</li>
+<li>Cooks dinner</li>
+<li>Leaves everything organized for you</li>
+</ul>
+<p>Your mom didn't just answer questions—she actually <em>did</em> things to help you.</p>
+<hr />
+<h2 id="the-biggest-difference-in-one-picture">The Biggest Difference in One Picture</h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>CHATBOT:
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>You ask → Chatbot answers → You do the work
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>AGENT:
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>You ask → Agent understands → Agent makes a plan → Agent does the work
+</span></code></pre></div>
+<hr />
+<h2 id="part-2-lets-break-down-an-agents-superpowers">Part 2: Let's Break Down an Agent's Superpowers</h2>
+<h3 id="superpower-1-it-remembers-everything-about-you">Superpower 1: It REMEMBERS Everything About You</h3>
+<p><strong>Chatbot:</strong></p>
+<ul>
+<li>Monday: "Hi! I'm Sarah and I want to learn coding"</li>
+<li>Tuesday: "Can you help me learn coding?"</li>
+<li>Chatbot: "Sure! What do you want to learn?"</li>
+<li>Chatbot forgot you already told it this!</li>
+</ul>
+<p><strong>Agent:</strong></p>
+<ul>
+<li>Monday: "Hi! I'm Sarah and I want to learn coding"</li>
+<li>Tuesday: "I'm ready to continue"</li>
+<li>Agent: "Welcome back, Sarah! You wanted to learn coding. Today we'll cover loops."</li>
+<li>Agent remembered everything!</li>
+</ul>
+<hr />
+<h3 id="superpower-2-it-can-take-actions">Superpower 2: It Can TAKE ACTIONS</h3>
+<p><strong>Chatbot:</strong></p>
+<ul>
+<li>You: "Can you book me a flight to New York?"</li>
+<li>Chatbot: "Here are some websites you can use to book flights"</li>
+<li>You have to do it yourself 😞</li>
+</ul>
+<p><strong>Agent:</strong></p>
+<ul>
+<li>You: "Can you book me a flight to New York?"</li>
+<li>Agent: Books the flight, orders an Uber, reserves a hotel, sends you confirmations</li>
+<li>Done! 🎉</li>
+</ul>
+<hr />
+<h3 id="superpower-3-it-makes-smart-decisions">Superpower 3: It Makes SMART DECISIONS</h3>
+<p><strong>Chatbot:</strong></p>
+<ul>
+<li>You: "I want to buy a laptop"</li>
+<li>Chatbot: "There are gaming laptops, business laptops, and budget laptops"</li>
+<li>You have to figure out which one is best</li>
+</ul>
+<p><strong>Agent:</strong></p>
+<ul>
+<li>You: "I want to buy a laptop"</li>
+<li>Agent thinks: "Is this person a gamer, student, or professional? What's their budget? What features do they need?"</li>
+<li>Agent recommends: "Based on your budget ($500), need for coding, and screen size preference, I recommend this laptop"</li>
+<li>Agent actually knows what you need! 🧠</li>
+</ul>
+<hr />
+<h3 id="superpower-4-it-keeps-trying-if-things-go-wrong">Superpower 4: It KEEPS TRYING If Things Go Wrong</h3>
+<p><strong>Chatbot:</strong></p>
+<ul>
+<li>You: "I want to attend this event"</li>
+<li>Chatbot: "The event is full. Sorry!"</li>
+<li>And that's it. Conversation over.</li>
+</ul>
+<p><strong>Agent:</strong></p>
+<ul>
+<li>You: "I want to attend this event"</li>
+<li>Agent: "The event is full. Let me check alternatives..."</li>
+<li>Agent finds: Similar events nearby, waitlist options, virtual attendance, or related events</li>
+<li>Agent suggests multiple solutions! 💡</li>
+</ul>
+<hr />
+<h2 id="part-3-lets-see-them-in-action-real-student-scenarios">Part 3: Let's See Them In Action - Real Student Scenarios</h2>
+<h3 id="scenario-1-planning-your-weekend">Scenario 1: Planning Your Weekend</h3>
+<p><strong>CHATBOT VERSION:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>You: &quot;What should I do this weekend?&quot;
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Chatbot: &quot;You could study, exercise, or hang out with friends&quot;
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>You: &quot;I have a math test on Monday. How do I prepare?&quot;
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Chatbot: &quot;Review chapter 5, practice problems, and get good sleep&quot;
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>You: &quot;Where can I find practice problems?&quot;
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>Chatbot: &quot;Your textbook or online resources&quot;
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>You: &quot;Can you help me study?&quot;
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Chatbot: &quot;I can explain topics. What topic do you want to learn?&quot;
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>You: &quot;Algebra&quot;
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>Chatbot: &quot;Algebra is the study of equations with variables...&quot;
+</span></code></pre></div>
+<p><strong>Result:</strong> Chatbot gives information. You have to organize everything yourself. ❌</p>
+<hr />
+<p><strong>AGENT VERSION:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>You: &quot;I have a math test Monday. Help me prepare this weekend.&quot;
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Agent: &quot;I&#39;m making you a study plan. One moment...&quot;
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>Agent does:
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>✓ Checks exactly what chapters are on the test
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>✓ Finds your textbook notes
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>✓ Downloads practice problems
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>✓ Creates a study schedule for Saturday &amp; Sunday
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>✓ Sets phone reminders
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>✓ Finds YouTube videos explaining hard topics
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>✓ Books a study group with your classmates
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>✓ Tracks your progress as you study
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>✓ Sends tips the night before the test
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>You: &quot;Ready to study now?&quot;
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>Agent: &quot;Yes! Start with Chapter 3. Here&#39;s your material, 30 minutes of videos, and 20 practice problems. I&#39;ve estimated you need 2 hours. Let&#39;s go!&quot;
+</span></code></pre></div>
+<p><strong>Result:</strong> Agent organizes AND helps you execute. Everything is ready! ✅</p>
+<hr />
+<h3 id="scenario-2-ordering-food-with-friends">Scenario 2: Ordering Food with Friends</h3>
+<p><strong>CHATBOT VERSION:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>You: &quot;I want to order pizza&quot;
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Chatbot: &quot;Popular pizzerias near you are: Pizza Hut, Domino&#39;s, Local Pizza Co&quot;
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>You: &quot;Which one should I pick?&quot;
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Chatbot: &quot;That depends on your preference&quot;
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>You: &quot;Which one is cheapest?&quot;
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>Chatbot: &quot;Let me check... Pizza Hut has a $10 special&quot;
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>You: &quot;Can you order for me?&quot;
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Chatbot: &quot;Sorry, I can&#39;t place orders&quot;
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>You: &quot;Can you send the link?&quot;
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>Chatbot: &quot;Here&#39;s the website&quot;
+</span></code></pre></div>
+<p><strong>Result:</strong> You have to do all the work. 😩</p>
+<hr />
+<p><strong>AGENT VERSION:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>You: &quot;Order pizza for me and my friends tomorrow at 6 PM&quot;
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Agent: &quot;Understood. Let me handle this.&quot;
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Agent thinks:
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>✓ Checks your food preferences (you like pepperoni and garlic bread)
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>✓ Asks your friends what they want (finds their contact info from your phone)
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>✓ Checks which pizzeria is closest and fastest
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>✓ Compares prices across all options
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>✓ Finds current discounts and coupons
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>✓ Picks the best option (closest, cheapest, good reviews)
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>✓ Places the order automatically
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>✓ Pays from your app
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>✓ Gets a tracking number
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>✓ Sends delivery updates to you and your friends
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>✓ Reminds you 5 minutes before delivery
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>Agent: &quot;Done! Pizza is ordered from Local Pizza Co. It&#39;ll arrive at 6:15 PM. You&#39;re saving $3 with their current coupon. Delivery confirmation sent to your group chat.&quot;
+</span></code></pre></div>
+<p><strong>Result:</strong> Everything is handled. You just show up! 🍕✅</p>
+<hr />
+<h3 id="scenario-3-school-project-with-friends">Scenario 3: School Project with Friends</h3>
+<p><strong>CHATBOT VERSION:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>You: &quot;Help me with my group project&quot;
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Chatbot: &quot;What&#39;s your project about?&quot;
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>You: &quot;We need to make a presentation on climate change&quot;
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Chatbot: &quot;Here are topics you could cover: global warming, renewable energy, carbon emissions...&quot;
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>You: &quot;Can you help organize the team?&quot;
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>Chatbot: &quot;You could assign each person a topic&quot;
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>You: &quot;Can you contact my teammates?&quot;
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>Chatbot: &quot;I can&#39;t send messages&quot;
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>You: &quot;Can you find resources?&quot;
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>Chatbot: &quot;Here are some websites you could visit&quot;
+</span></code></pre></div>
+<p><strong>Result:</strong> You're doing everything on your own. 😞</p>
+<hr />
+<p><strong>AGENT VERSION:</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>You: &quot;I need to do a group project on climate change. Can you help?&quot;
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Agent: &quot;I&#39;ll organize everything.&quot;
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Agent immediately:
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>✓ Finds your teammate list from school
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>✓ Contacts each person: &quot;We need to do a project on climate change. Here&#39;s what we need&quot;
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>✓ Creates a shared document for the team
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>✓ Divides topics fairly:
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>   - Sarah → Global Warming
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>   - Mike → Renewable Energy
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>   - You → Carbon Emissions
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>✓ Finds the best YouTube videos for each topic
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>✓ Gathers research from 5 different reliable sources
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>✓ Creates a timeline: Research by Friday, draft by Sunday, presentation ready by Tuesday
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>✓ Sends reminders to your team
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>✓ Watches your progress and reminds people who fall behind
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>✓ Puts together the presentation slides
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>✓ Sends practice tips the day before
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>Day before presentation:
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>Agent: &quot;Your project is ready. Here&#39;s what everyone is presenting. Practice this section - it needs work.&quot;
+</span></code></pre></div>
+<p><strong>Result:</strong> Everything is coordinated. You just focus on learning! 🎯✅</p>
+<hr />
+<h2 id="part-4-the-simple-comparison">Part 4: The Simple Comparison</h2>
+<h3 id="side-by-side-what-they-can-do">Side-by-Side: What They Can Do</h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CHATBOT:
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Can:
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>✓ Answer questions
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>✓ Explain things
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>✓ Find information
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>✓ Have conversations
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>✓ Give advice
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Cannot:
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>✗ Remember you after chat ends
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>✗ Take real actions
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>✗ Finish tasks for you
+</span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>✗ Coordinate multiple things
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>✗ Change things in the world
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>AGENT:
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>Can:
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>✓ Remember everything about you
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>✓ Take real actions
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>✓ Finish complete tasks
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>✓ Coordinate many things at once
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>✓ Actually change things
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>✓ Make smart decisions
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>✓ Learn from what happens
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>✓ Try different approaches
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>Also can do everything a chatbot does!
+</span></code></pre></div>
+<hr />
+<h2 id="part-5-quick-comparison-chart">Part 5: Quick Comparison Chart</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Chatbot</th>
+<th>Agent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can it remember me?</td>
+<td>No (forgets after)</td>
+<td>Yes (always remembers)</td>
+</tr>
+<tr>
+<td>Can it do tasks?</td>
+<td>No (just talks)</td>
+<td>Yes (actually does it)</td>
+</tr>
+<tr>
+<td>Does it need my help?</td>
+<td>Yes (a lot!)</td>
+<td>No (works alone)</td>
+</tr>
+<tr>
+<td>Can it make decisions?</td>
+<td>Limited</td>
+<td>Yes (smart ones)</td>
+</tr>
+<tr>
+<td>Is it proactive?</td>
+<td>No (waits for you)</td>
+<td>Yes (helps without asking)</td>
+</tr>
+<tr>
+<td>Can it handle problems?</td>
+<td>No (gives up)</td>
+<td>Yes (finds solutions)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="part-6-real-world-examples-you-know">Part 6: Real World Examples You Know</h2>
+<h3 id="netflix">Netflix</h3>
+<p><strong>Chatbot Version:</strong></p>
+<ul>
+<li>You: "What should I watch?"</li>
+<li>Chatbot: "Here's a list of top movies"</li>
+<li>You: "Which one is good?"</li>
+<li>Chatbot: "Many people like it"</li>
+<li>You: "Is it my type of movie?"</li>
+<li>Chatbot: "I'm not sure"</li>
+</ul>
+<p><strong>Agent Version (What Netflix Actually Does):</strong></p>
+<ul>
+<li>Netflix Agent remembers: Every show you watched, which you liked, when you paused, what you searched</li>
+<li>Makes a decision: "Based on your history, you'll love this"</li>
+<li>Takes action: Puts it on your homepage</li>
+<li>Learns: Tracks if you watched it and adjusts recommendations</li>
+<li>Result: Perfect recommendations every time</li>
+</ul>
+<hr />
+<h3 id="spotify">Spotify</h3>
+<p><strong>Chatbot Version:</strong></p>
+<ul>
+<li>You: "I need music recommendations"</li>
+<li>Chatbot: "Here are popular songs this week"</li>
+<li>You: "But I like indie rock"</li>
+<li>Chatbot: "Here are some indie rock songs"</li>
+</ul>
+<p><strong>Agent Version (What Spotify Actually Does):</strong></p>
+<ul>
+<li>Spotify Agent remembers: Every song you ever played, skipped, liked</li>
+<li>Makes a decision: "This artist matches your taste"</li>
+<li>Takes action: Adds it to your Discover Weekly</li>
+<li>Learns: Tracks what you listen to and gets smarter</li>
+<li>Result: Your personalized playlist is <em>perfect</em></li>
+</ul>
+<hr />
+<h2 id="part-7-why-should-you-care">Part 7: Why Should You Care?</h2>
+<h3 id="jobs-in-the-future">Jobs in the Future</h3>
+<p>🚀 <strong>Agent Builders</strong> - People who make agents
+💼 <strong>Agent Managers</strong> - People who run agent companies</p>
+<p>🎨 <strong>AI Designers</strong> - People who design how agents interact with humans
+🔧 <strong>Tool Builders</strong> - People who create tools agents can use</p>
+<h3 id="skills-you-need-now">Skills You Need Now</h3>
+<ol>
+<li><strong>Understanding how to work with agents</strong> - This is the future!</li>
+<li><strong>Thinking in steps</strong> - Agents need clear instructions</li>
+<li><strong>Problem-solving</strong> - Agents need to solve complex problems</li>
+<li><strong>Communication</strong> - Explaining what you want clearly</li>
+</ol>
+<hr />
+<h2 id="the-one-thing-to-remember">The ONE Thing to Remember</h2>
+<p><strong>Think of it this way:</strong></p>
+<p>A <strong>Chatbot</strong> is like a <strong>librarian</strong> - they can answer any question you ask, but you have to come and ask. If you leave, they forget you existed. They can't follow you home or do tasks outside the library.</p>
+<p>An <strong>Agent</strong> is like a <strong>best friend</strong> - they remember everything about you, they help you without asking, they coordinate with other friends, they take action in the real world, and they actually <em>do</em> things for you.</p>
+<hr />
+<h2 id="final-takeaway">Final Takeaway</h2>
+<p><strong>Remember these 3 things:</strong></p>
+<ol>
+<li><strong>Chatbots talk</strong> 💬<ul>
+<li>They answer questions</li>
+<li>They give information</li>
+<li>They forget after you leave</li>
+</ul>
+</li>
+<li><strong>Agents do</strong> ⚡<ul>
+<li>They remember you</li>
+<li>They take action</li>
+<li>They complete tasks</li>
+<li>They work without asking</li>
+</ul>
+</li>
+<li><strong>Agents are the future</strong> 🚀<ul>
+<li>They're getting smarter</li>
+<li>They'll help us do more</li>
+<li>Understanding them now means you're ready for the future</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="still-have-questions-heres-the-simplest-explanation">Still Have Questions? Here's The Simplest Explanation</h2>
+<p><strong>Q: Can I talk to an agent like I talk to a chatbot?</strong>
+A: Yes! But the agent will also DO things for you, not just answer.</p>
+<p><strong>Q: Will agents replace chatbots?</strong>
+A: Not completely. Chatbots are better for simple questions. Agents are better for complex tasks.</p>
+<p><strong>Q: Can an agent be wrong?</strong>
+A: Yes. That's why humans still make final decisions. An agent helps, but you're still in charge.</p>
+<p><strong>Q: Are there agents I already use?</strong>
+A: Yes! when chatbot search content from different websites for you, create an essay for you and then upload in google drive is an example of agentic behavriour. They're everywhere!</p>
+<p><strong>Q: Can I build an agent?</strong>
+A: Yes! With programming skills and AI knowledge. This is becoming a real job!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../readme/" class="md-footer__link md-footer__link--prev" aria-label="Previous: What Is an Agent (No Code)?">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                What Is an Agent (No Code)?
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../05_knowledge_connections/01_file_search_workshop/" class="md-footer__link md-footer__link--next" aria-label="Next: Workshop 1: File Search with Vector Stores">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Workshop 1: File Search with Vector Stores
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2025 Panaversity. All rights reserved.
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/panaversity/" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04c-5.5 0-10 4.49-10 10.02 0 5 3.66 9.15 8.44 9.9v-7H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.89 3.78-3.89 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33v7a10 10 0 0 0 8.44-9.9c0-5.53-4.5-10.02-10-10.02"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.instagram.com/panaversity/?igsh=cmljY3A2bmcyNzl3#" target="_blank" rel="noopener" title="www.instagram.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.youtube.com/channel/UCV1ZbnHzA7FwG7XXYYzE84w" target="_blank" rel="noopener" title="www.youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 15 5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28 1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/panaversity/posts/?feedView=all" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
