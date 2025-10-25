@@ -49,6 +49,8 @@ markdown_extensions:
 
 copyright: Copyright &copy; 2025 Panaversity. All rights reserved.
 
+repo_url: https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code
+
 extra:
   social:
     - icon: material/facebook
