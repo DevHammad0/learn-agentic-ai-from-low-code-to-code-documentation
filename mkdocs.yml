@@ -2,6 +2,8 @@ site_name: Learn Agentic AI from Low Code to Code - Documentation
 site_url: https://sitename.example
 theme:
   name: material
+  icon:
+    repo: fontawesome/brands/github
   font:
     # text: default
     code: Red Hat Mono
@@ -50,6 +52,8 @@ markdown_extensions:
 copyright: Copyright &copy; 2025 Panaversity. All rights reserved.
 
 repo_url: https://github.com/panaversity/learn-agentic-ai-from-low-code-to-code
+repo_name: learn-agentic-ai-from-low-code-to-code
+
 
 extra:
   social:
